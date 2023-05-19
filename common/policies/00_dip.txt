@@ -1,0 +1,28 @@
+########################################
+### Moved files together for  better overview
+########################################
+
+mandatory_service = {
+	monarch_power = DIP
+	potential = {
+		has_idea_group = dynasty0
+		has_idea_group = staatsverwaltung0
+	}
+	
+	allow = {
+		full_idea_group = dynasty0
+		full_idea_group = staatsverwaltung0
+	}
+	
+	reelection_cost = -0.10
+	legitimacy = 1.0
+	devotion = 1.0
+	horde_unity = 1.0
+	meritocracy = 0.5
+	may_recruit_female_generals = yes
+	female_advisor_chance = 0.25
+
+	ai_will_do = {
+		factor = 0
+	}
+}
