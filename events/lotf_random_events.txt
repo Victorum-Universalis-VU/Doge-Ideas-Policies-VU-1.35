@@ -182,6 +182,14 @@ country_event = { #Borat Easter Egg
 			factor = 2
 			has_idea_group = innovativeness_ideas
 		}
+		#modifier = {
+		#	factor = 2
+		#	has_idea_group = diplomatic_ideas
+		#}
+		modifier = {
+			factor = 2
+			has_idea_group = dynasty0
+		}
 		modifier = {
 			factor = 2
 			has_idea_group = staatsverwaltung0

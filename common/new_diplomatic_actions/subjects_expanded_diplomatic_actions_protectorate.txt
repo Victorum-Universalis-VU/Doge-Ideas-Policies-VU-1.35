@@ -1265,6 +1265,7 @@ cancel_protectorate = {
 			}
 			if = {
 				limit = {
+					#NOT = { full_idea_group = diplomatic_ideas }
 					NOT = { full_idea_group = dynasty0 }
 				}
 				add_stability = -1
@@ -1283,6 +1284,7 @@ cancel_protectorate = {
 		OR = {
 			stability = 2
 			adm_power = 300
+			#full_idea_group = diplomatic_ideas
 			full_idea_group = dynasty0
 			FROM = {
 				liberty_desire = 100

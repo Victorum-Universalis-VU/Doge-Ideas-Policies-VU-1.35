@@ -1,10 +1,10 @@
-namespace = BtPLegacy_flavour_metis
+namespace = VULegacy_flavour_metis
 
 # Meti appear
 province_event = {
-	id = BtPLegacy_flavour_metis.1
-	title = "BtPLegacyMetis.EVTNAME1"
-	desc = "BtPLegacyMetis.EVTDESC1"
+	id = VULegacy_flavour_metis.1
+	title = "VULegacyMetis.EVTNAME1"
+	desc = "VULegacyMetis.EVTDESC1"
 	picture = COLONIZATION_eventPicture
 	
 	trigger = {
@@ -55,12 +55,12 @@ province_event = {
 		}
 		modifier = { #If primary culture Meti, much, much more likely to spread
 			factor = 0.2
-			owner = { culture_group = septrional_creoles }			#BTONLY
+			owner = { culture_group = septrional_creoles }			#VU_ONLY
 		}
 	}
 
 	option = { # Who are we to judge?
-		name = "BtPLegacyMetis.EVTOPTA1"
+		name = "VULegacyMetis.EVTOPTA1"
 		ai_chance = {
 			factor = 20
 			modifier = {
@@ -97,7 +97,7 @@ province_event = {
 	}
 	
 	option = { # Stop this practice!
-		name = "BtPLegacyMetis.EVTOPTB1"
+		name = "VULegacyMetis.EVTOPTB1"
 		trigger = {
 			owner = { adm_power = 10 }
 		}
@@ -113,6 +113,7 @@ province_event = {
 			}
 			modifier = {
 				factor = 1.5
+				#owner = { has_idea_group = aristocracy_ideas }	#Aristocratic governments dont like muddying the bloodlines
 				owner = { has_idea_group = monarchie0 }	#Aristocratic governments dont like muddying the bloodlines
 			}
 			modifier = {
@@ -143,9 +144,9 @@ province_event = {
 
 # Anglo Meti appear
 province_event = {
-	id = BtPLegacy_flavour_metis.2
-	title = "BtPLegacyMetis.EVTNAME2"
-	desc = "BtPLegacyMetis.EVTDESC2"
+	id = VULegacy_flavour_metis.2
+	title = "VULegacyMetis.EVTNAME2"
+	desc = "VULegacyMetis.EVTDESC2"
 	picture = COLONIZATION_eventPicture
 	
 	trigger = {
@@ -200,12 +201,12 @@ province_event = {
 		}
 		modifier = { #If primary culture Meti, much, much more likely to spread
 			factor = 0.2
-			owner = { culture_group = septrional_creoles }			#BTONLY
+			owner = { culture_group = septrional_creoles }			#VU_ONLY
 		}
 	}
 
 	option = { # Who are we to judge?
-		name = "BtPLegacyMetis.EVTOPTA2"
+		name = "VULegacyMetis.EVTOPTA2"
 		ai_chance = {
 			factor = 20
 			modifier = {
@@ -242,7 +243,7 @@ province_event = {
 	}
 	
 	option = { # Stop this practice!
-		name = "BtPLegacyMetis.EVTOPTB2"
+		name = "VULegacyMetis.EVTOPTB2"
 		trigger = {
 			owner = { adm_power = 10 }
 		}
@@ -258,6 +259,7 @@ province_event = {
 			}
 			modifier = {
 				factor = 1.5
+				#owner = { has_idea_group = aristocracy_ideas }	#Aristocratic governments dont like muddying the bloodlines
 				owner = { has_idea_group = monarchie0 }	#Aristocratic governments dont like muddying the bloodlines
 			}
 			modifier = {
@@ -288,9 +290,9 @@ province_event = {
 
 # Bungi appear
 province_event = {
-	id = BtPLegacy_flavour_metis.3
-	title = "BtPLegacyMetis.EVTNAME3"
-	desc = "BtPLegacyMetis.EVTDESC3"
+	id = VULegacy_flavour_metis.3
+	title = "VULegacyMetis.EVTNAME3"
+	desc = "VULegacyMetis.EVTDESC3"
 	picture = COLONIZATION_eventPicture
 	
 	trigger = {
@@ -344,12 +346,12 @@ province_event = {
 		}
 		modifier = { #If primary culture Meti, much, much more likely to spread
 			factor = 0.2
-			owner = { culture_group = septrional_creoles }			#BTONLY
+			owner = { culture_group = septrional_creoles }			#VU_ONLY
 		}
 	}
 
 	option = { # Who are we to judge?
-		name = "BtPLegacyMetis.EVTOPTA3"
+		name = "VULegacyMetis.EVTOPTA3"
 		ai_chance = {
 			factor = 20
 			modifier = {
@@ -386,7 +388,7 @@ province_event = {
 	}
 	
 	option = { # Stop this practice!
-		name = "BtPLegacyMetis.EVTOPTB3"
+		name = "VULegacyMetis.EVTOPTB3"
 		trigger = {
 			owner = { adm_power = 10 }
 		}
@@ -402,6 +404,7 @@ province_event = {
 			}
 			modifier = {
 				factor = 1.5
+				#owner = { has_idea_group = aristocracy_ideas }	#Aristocratic governments dont like muddying the bloodlines
 				owner = { has_idea_group = monarchie0 }	#Aristocratic governments dont like muddying the bloodlines
 			}
 			modifier = {

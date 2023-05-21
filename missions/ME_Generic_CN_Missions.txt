@@ -343,12 +343,6 @@ CN_Generic_missions_3 = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					is_expanded_mod_active = { mod = subjects }
-				}
-				custom_tooltip = CN_Tooltips.5
-			}
 			set_country_flag = CN_dominion
 			add_country_modifier = {
 				name = CN_colonial_assembly_modifier
@@ -623,6 +617,7 @@ CN_Generic_missions_4 = {
 			OR = {
 				mercantilism = 20
 				has_idea = shrewd_commerce_practise
+				#has_idea = free_merchants
 				has_idea = overseas_merchants
 			}
 		}

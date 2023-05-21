@@ -1135,6 +1135,7 @@ cancel_puppet_state = {
 			}
 			if = {
 				limit = {
+					#NOT = { full_idea_group = diplomatic_ideas }
 					NOT = { full_idea_group = dynasty0 }
 				}
 				add_stability = -1
@@ -1156,6 +1157,7 @@ cancel_puppet_state = {
 		OR = {
 			stability = 1
 			adm_power = 300
+			#full_idea_group = diplomatic_ideas
 			full_idea_group = dynasty0
 		}
 		NOT = {

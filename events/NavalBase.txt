@@ -32,12 +32,14 @@ province_event = {
 		}
 		if = {
 			limit = { 
+				#owner = { has_idea_group = naval_ideas }
 				owner = { has_idea_group = maritime_ideas }
 			}
 			owner = { add_treasury = -50 }
 		}
 		if = {
-			limit = { 
+			limit = {
+				#owner = { NOT = { has_idea_group = naval_ideas } }
 				owner = { NOT = { has_idea_group = maritime_ideas } }
 			}
 			owner = { add_treasury = -100 }
@@ -97,13 +99,15 @@ province_event = {
 			duration = -1
 		}
 		if = {
-			limit = { 
+			limit = {
+				#owner = { has_idea_group = naval_ideas }
 				owner = { has_idea_group = maritime_ideas }
 			}
 			owner = { add_treasury = -250 }
 		}
 		if = {
-			limit = { 
+			limit = {
+				#owner = { NOT = { has_idea_group = naval_ideas } }
 				owner = { NOT = { has_idea_group = maritime_ideas } }
 			}
 			owner = { add_treasury = -500 }
@@ -157,13 +161,15 @@ province_event = {
 			duration = -1
 		}
 		if = {
-			limit = { 
+			limit = {
+				#owner = { has_idea_group = naval_ideas }
 				owner = { has_idea_group = maritime_ideas }
 			}
 			owner = { add_treasury = -750 }
 		}
 		if = {
-			limit = { 
+			limit = {
+				#owner = { NOT = { has_idea_group = naval_ideas } }
 				owner = { NOT = { has_idea_group = maritime_ideas } }
 			}
 			owner = { add_treasury = -1500 }

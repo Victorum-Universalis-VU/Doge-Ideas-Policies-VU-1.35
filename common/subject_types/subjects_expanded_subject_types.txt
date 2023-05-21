@@ -9481,22 +9481,22 @@ fief_subject = {
 		OR = {
 			has_reform = feudalism_reform
 			# Governments Expanded reforms
-			has_reform = french_feudalism
+			#has_reform = french_feudalism
 			has_reform = ancien_regime_reform
 			has_reform = arch_monarchy_reform
 			has_reform = grand_duchy_reform
 			has_reform = lithuania_warlord_duke
-			has_reform = beylik
+			has_reform = beylik_government
 			has_reform = kingdom_of_castille_and_leon
 			has_reform = crown_of_castille
 			has_reform = hispanic_kingdom
 			has_reform = crown_of_aragon
-			has_reform = kingdom_of_portugal
+			has_reform = portuguese_monarchy_reform
 			has_reform = kingdom_of_portugal_and_azures
-			has_reform = crown_of_saint_wenceslaus_2
+			has_reform = crown_of_saint_wenceslaus
 			has_reform = office_of_lord_regent_reform
 			has_reform = arch_king_reform
-			has_reform = arch_duchy_reform
+			has_reform = austrian_archduchy
 			has_reform = habsburg_monarchy_reform
 			has_reform = austrian_empire_reform
 			has_reform = granadan_iqta_reform
@@ -11437,7 +11437,10 @@ iqta_vassal = {
 				total_development = 1000
 			}
 			# Missions Expanded reforms
-			has_reform = caliphate_reform_sunni
+			has_reform = caliphate_theocracy_reform
+			has_reform = ME_caliphate_reform_sunni
+			has_reform = ME_caliphate_reform_sunni_andalusia
+			has_reform = ME_caliphate_reform_sunni_arabian
 			AND = {
 				OR = {
 					government_rank = 2
@@ -12589,6 +12592,7 @@ banking_family_subject = {
 				full_idea_group = trade_ideas
 				OR = {
 					full_idea_group = influence_ideas
+					#full_idea_group = diplomatic_ideas
 					full_idea_group = dynasty0
 				}
 			}
@@ -13266,22 +13270,22 @@ medieval_vassal = {
 					has_reform = feudalism_reform
 					has_reform = feudal_theocracy
 					# Governments Expanded reforms
-					has_reform = french_feudalism
+					#has_reform = french_feudalism
 					has_reform = ancien_regime_reform
 					has_reform = arch_monarchy_reform
 					has_reform = grand_duchy_reform
 					has_reform = lithuania_warlord_duke
-					has_reform = beylik
+					has_reform = beylik_government
 					has_reform = kingdom_of_castille_and_leon
 					has_reform = crown_of_castille
 					has_reform = hispanic_kingdom
 					has_reform = crown_of_aragon
-					has_reform = kingdom_of_portugal
+					has_reform = portuguese_monarchy_reform
 					has_reform = kingdom_of_portugal_and_azures
-					has_reform = crown_of_saint_wenceslaus_2
+					has_reform = crown_of_saint_wenceslaus
 					has_reform = office_of_lord_regent_reform
 					has_reform = arch_king_reform
-					has_reform = arch_duchy_reform
+					has_reform = austrian_archduchy
 					has_reform = habsburg_monarchy_reform
 					has_reform = austrian_empire_reform
 					has_reform = granadan_iqta_reform
@@ -13294,7 +13298,6 @@ medieval_vassal = {
 			}
 		}
 	}
-
 	# Properties:
 	is_voluntary = yes
 	joins_overlords_wars = no

@@ -539,6 +539,7 @@ negotiator = {
 		modifier = {
 			factor = 1.25
 			owner = {
+				#full_idea_group = diplomatic_ideas
 				full_idea_group = dynasty0
 			}
 		}

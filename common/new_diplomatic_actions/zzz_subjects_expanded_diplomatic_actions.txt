@@ -617,6 +617,7 @@ revoke_custom_march_subject = {
 			}
 			if = {
 				limit = {
+				    #NOT = { full_idea_group = diplomatic_ideas }
 					NOT = { full_idea_group = dynasty0 }
 				}
 				add_stability = -1

@@ -819,6 +819,7 @@ saxony_missions_slot_2 = {
 				OR = {
 					has_building = naval_base
 					has_building = naval_arsenal
+					has_building = coastal_artillery
 				}
 			}
 		}
@@ -1308,6 +1309,13 @@ saxony_missions_slot_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			lower_saxony_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			holstein_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -1593,6 +1601,7 @@ saxony_missions_slot_3 = {
 				}
 			}
 			OR = {
+				#full_idea_group = diplomatic_ideas
 				full_idea_group = dynasty0
 				has_idea = the_zwinger
 				AND = {
@@ -1980,12 +1989,17 @@ saxony_missions_slot_4 = {
 		provinces_to_highlight = {
 			OR = {
 				area = braunschweig_area
+				area = lower_saxony_area
 				area = holstein_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			braunschweig_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_saxony_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -2031,7 +2045,7 @@ saxony_missions_slot_4 = {
 					duration = 5475
 				}
 			}
-			thuringia_area = {
+			franconia_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -2053,10 +2067,17 @@ saxony_missions_slot_4 = {
 		position = 10
 		required_missions = { saxony_reunite_saxony_and_thuringia }
 		provinces_to_highlight = {
-			area = thuringia_area
+			OR = {
+			    area = franconia_area
+				area = thuringia_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			thuringia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
@@ -2083,10 +2104,6 @@ saxony_missions_slot_4 = {
 		position = 11
 		required_missions = { saxony_the_weimar_classic }
 		trigger = {
-			if = {
-				limit = {
-					is_expanded_mod_active = { mod = ages_and_splendor }
-				}
 				OR = {
 					full_idea_group = humanist_ideas
 					custom_trigger_tooltip = {
@@ -2097,21 +2114,6 @@ saxony_missions_slot_4 = {
 						}
 					}
 					num_accepted_cultures = 4
-					has_age_ability = ase_saxony_piety
-				}
-			}
-			else = {
-				OR = {
-					full_idea_group = humanist_ideas
-					custom_trigger_tooltip = {
-						tooltip = SAX_HAS_AT_LEAST_1_TOLERANCE_HERETIC
-						has_global_modifier_value = {
-							which = tolerance_heretic
-							value = 1
-						}
-					}
-					num_accepted_cultures = 4
-				}
 			}
 		}
 		effect = {

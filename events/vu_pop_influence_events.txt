@@ -1023,6 +1023,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.75
+			#has_idea_group = plutocracy_ideas
 			has_idea_group = staatsverwaltung0
 		}
 	}

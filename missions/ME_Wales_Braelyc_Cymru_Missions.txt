@@ -59,12 +59,19 @@ WLS_CYR_BRL_missions_1 = {
 			WLS_indep_3
 		}
 		provinces_to_highlight = {
-			area = cornwall_area
+			OR = {
+			   area = cornwall_area
+				 area = south_east_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		position = 4
 		trigger = {
 			cornwall_area = {
+				type = all
+				owned_by = ROOT
+			}
+			south_east_area = {
 				type = all
 				owned_by = ROOT
 			}
@@ -645,6 +652,7 @@ WLS_CYR_BRL_missions_4 = {
 			}
 			else = {
 				OR = {
+					#plutocracy_ideas = 3
 					staatsverwaltung0 = 3
 					has_reform = administrative_monarchy
 					has_reform = administrative_republic
@@ -686,22 +694,11 @@ WLS_CYR_BRL_missions_5 = {
 			}
 			papal_influence = 10
 			papal_influence = ENG
-			NOT = { current_age = age_of_reformation }
 		}
 		effect = {
-			add_papal_influence = -10
 			add_country_modifier = {
 				name = wls_papal
 				duration = 5475
-			}
-			every_country = {
-				limit = {
-					is_rival = ENG
-				}
-				add_opinion = {
-					who = ROOT
-					modifier = wls_pope_rival
-				}
 			}
 		}
 	}

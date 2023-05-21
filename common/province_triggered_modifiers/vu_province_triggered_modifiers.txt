@@ -113,7 +113,7 @@ orthodox_catholic_relations = {
 	picture = "tolerance_heathen"
 }
 
-bt_birkarls = {
+vu_birkarls = {
 	potential = {
 		owner = {
 			religion_group = christian

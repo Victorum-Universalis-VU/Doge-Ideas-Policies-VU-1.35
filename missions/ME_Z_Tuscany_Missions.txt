@@ -582,6 +582,7 @@ Tuscany_missions_3 = {
 				}
 			}
 			OR = {
+				#full_idea_group = diplomatic_ideas
 				full_idea_group = dynasty0
 				AND = {
 					DIP = 6
@@ -854,15 +855,6 @@ Tuscany_missions_4 = {
 					duration = 7300
 					power = 20
 					key = ita_carribean_import_ge
-				}
-			}
-			if = {
-				limit = {
-					is_expanded_mod_active = { mod = governments }
-				}
-				add_country_modifier = {
-					name = ita_carribean_import_ge
-					duration = -1
 				}
 			}
 		}

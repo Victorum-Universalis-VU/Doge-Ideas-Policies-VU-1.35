@@ -284,17 +284,6 @@ bohemian_missions_1 = {
 					has_church_aspect = freedom_to_preach_aspect
 				}
 			}
-			if = {
-				limit = { 
-					religion = catholic 
-					has_global_flag = advisors_expanded_mod_active
-				}
-				OR = {
-					religious_representative = 1 
-					papal_influence = 25 
-					has_estate_privilege = estate_church_religious_state
-				}
-			}
 			else_if = {
 				limit = { religion = catholic }
 				OR = {
@@ -535,12 +524,13 @@ bohemian_missions_2 = {
 			}
 		}
 		effect = {
-			ME_give_claims = { area = thuringia_area }
+			ME_give_claims = { area = saxony_area }
 			ME_give_claims = { area = altmark_area }
-			ME_give_claims = { area = holstein_area }
+			ME_give_claims = { area = anhalt_area }
 			ME_give_claims = { area = hinter_pommern_area }
 			ME_give_claims = { area = vorpommern_area }
-			
+			ME_give_claims = { area = thuringia_area }
+
 			custom_tooltip = " "
 			
 			add_mil_power = 100 
@@ -587,28 +577,33 @@ bohemian_missions_2 = {
 		position = 3 
 		provinces_to_highlight = {
 			OR = {
+				area = saxony_area
+				area = altmark_area
+                area = anhalt_area
 				area = thuringia_area 
-				area = altmark_area 
-				area = holstein_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			thuringia_area = {
-				type = all 
-				country_or_non_sovereign_subject_holds = ROOT 
+			saxony_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 			altmark_area = {
-				type = all 
-				country_or_non_sovereign_subject_holds = ROOT 
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
-			holstein_area = {
+			anhalt_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thuringia_area = {
 				type = all 
 				country_or_non_sovereign_subject_holds = ROOT 
 			}
 		}
 		effect = {
-			country_event = { id = FU_Bohemian_Events.3 }  
+			country_event = { id = FU_Bohemian_Events.3 }
 			custom_tooltip = " "
 			add_dip_power = 50
 		}
@@ -723,7 +718,6 @@ bohemian_missions_2 = {
 				if = {
 					limit = { has_global_flag = advisors_expanded_mod_active }
 					OR = {
-						civil_engineer = 1 
 						capital_scope = { 
 							has_state_edict = edict_encourage_development
 						}
@@ -993,7 +987,7 @@ bohemian_missions_3 = {
 			if = {
 				limit = { has_global_flag = advisors_expanded_mod_active }
 				define_advisor = {
-					type = defensive_planner 
+					type = fortification_expert 
 					skill = 1 
 					cost_multiplier = 0.5 
 				}
@@ -1320,10 +1314,10 @@ bohemian_missions_3 = {
 			if = {
 				limit = { has_global_flag = idea_groups_expanded_mod_active }
 				OR = {
-					full_idea_group = state_affairs_idea_groups_expanded
 					full_idea_group = economic_ideas 
 					full_idea_group = trade_ideas
 					full_idea_group = administrative_ideas
+					full_idea_group = state_affairs_idea_groups_expanded
 					monthly_adm = 10
 					ruler_has_personality = architectural_visionary_personality
 				}
@@ -1437,7 +1431,6 @@ bohemian_missions_4 = {
 						limit = { has_global_flag = advisors_expanded_mod_active }
 						OR = {
 							has_estate_privilege = estate_nobles_strong_duchies
-							subject_mediator = 1 
 						}
 					}
 					else = { has_estate_privilege = estate_nobles_strong_duchies }
@@ -1447,6 +1440,7 @@ bohemian_missions_4 = {
 		}
 		effect = { 
 			ME_give_claims = { area = bavaria_area }
+			ME_give_claims = { area = tirol_area }
 			
 			custom_tooltip = BOH_if_silesia_is_owned_directly
 			tooltip = {
@@ -1524,13 +1518,19 @@ bohemian_missions_4 = {
 		required_missions = { boh_deal_with_the_piasts }
 		position = 3 
 		provinces_to_highlight = {
-			area = bavaria_area
+			OR = {
+				area = bavaria_area
+				area = tirol_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 6
-				area = bavaria_area
+				OR = {
+					area = bavaria_area
+					area = tirol_area
+				}
 			}
 		}
 		effect = {
@@ -1730,7 +1730,7 @@ bohemian_missions_4 = {
 						has_global_flag = trade_goods_expanded_mod_active
 					}
 					2968 = { 
-						change_trade_goods = silver 
+						change_trade_goods = silver
 						add_province_modifier = {
 							name = boh_smelting_facility_modifier 
 							duration = 7300 
@@ -1748,22 +1748,22 @@ bohemian_missions_4 = {
 		position = 11 
 		provinces_to_highlight = {
 			OR = {
-				area = thuringia_area 
-				province_id = 61 
-				province_id = 52 
+				area = saxony_area
+				province_id = 61
+				province_id = 52
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			thuringia_area = {
-				type = all 
-				country_or_non_sovereign_subject_holds = ROOT 
+			saxony_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
-			thuringia_area = {
+			saxony_area = {
 				owner = {
 					development_in_provinces = {
 						value = 45
-						area = thuringia_area
+						area = saxony_area
 					}
 				}
 			}
@@ -2380,8 +2380,9 @@ bohemian_missions_5 = {
 			}
 			# OR = {
 				# is_hegemon = yes 
-				# full_idea_group = dynasty0 
+				# full_idea_group = diplomatic_ideas
 				# full_idea_group = influence_ideas 
+				# full_idea_group = dynasty0 
 			# }
 			# has_parliament = yes 
 		}

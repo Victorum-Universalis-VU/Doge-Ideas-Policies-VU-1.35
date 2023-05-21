@@ -1,3 +1,4 @@
+#VU updated by San Felipe for 1.35
 ######################################################################
 # Throne Pretender rebels.
 ######################################################################
@@ -22,7 +23,7 @@ pretender_rebels = {
 	
 	
 	artillery = 0.1
-	infantry = 0.5
+	infantry = 0.6 #From 0.5
 	cavalry = 0.4
 	
 	morale = 1.25
@@ -70,6 +71,7 @@ pretender_rebels = {
 			factor = 2
 			owner = {
 				government = republic
+				#aristocracy_ideas = 1
 				monarchie0 = 1
 			}
 		}
@@ -310,6 +312,7 @@ pretender_rebels = {
 						has_reform = indep_daimyo
 						has_reform = principality
 						has_reform = daimyo
+						has_reform = appanage_reform
 						has_reform = shogunate
 						has_reform = colonial_government
 						has_reform = siberian_tribe
@@ -318,6 +321,13 @@ pretender_rebels = {
 						has_reform = english_monarchy
 						has_reform = scottish_monarchy
 						has_reform = ottoman_government
+						has_reform = modernized_ottoman_government
+						has_reform = reorganized_ottoman_government
+						has_reform = sultanate_of_rum_reform
+						has_reform = eyalet_government
+						has_reform = barbary_eyalet_government
+						has_reform = kalmar_union
+						has_reform = danish_archkingdom
 						has_reform = tribal_federation
 						has_reform = feudal_theocracy
 						has_reform = mamluk_government
@@ -328,17 +338,19 @@ pretender_rebels = {
 			change_government = REB
 			#set_legacy_government = despotic_monarchy
 		}
-		kill_heir = { allow_new_heir = no }
-		kill_consort = yes
+		if = {
+			limit = { has_heir = yes }
+			kill_heir = { allow_new_heir = no }
+		}
+		if = {
+			limit = { has_consort = yes }
+			kill_consort = yes
+		}
 		set_country_flag = no_new_succession_crisis_if_pretender_rebels #This is used in the event that triggers from the on_action to ensure that you don't get new pretenders if these pretenders are happening because of a succession crisis.
 		define_ruler = {
 			rebel = yes
 		}
 		clr_country_flag = no_new_succession_crisis_if_pretender_rebels
-		if = {
-			limit = { has_heir = yes }
-			kill_heir = { allow_new_heir = no }
-		}
 		if = {
 			limit = { has_disaster = counts_feud }
 			end_disaster = counts_feud

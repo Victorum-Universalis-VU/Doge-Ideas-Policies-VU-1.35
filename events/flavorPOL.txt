@@ -1,8 +1,9 @@
-######################################## 
-# Flavor events for Poland
-# 
-# written by Sara Wendel-Örtqvist
-######################################## 
+#VU updated by San Felipe for 1.35
+###################################
+# Flavor events for Poland        #
+#                                 #
+# written by Sara Wendel-Örtqvist #
+###################################
 
 namespace = flavor_pol
 normal_or_historical_nations = yes
@@ -848,6 +849,7 @@ country_event = {
 			has_ruler_modifier = pol_sejm_refuse_timer
 		}
 		government = monarchy
+		NOT = { has_reform = polish_autocratic_monarchy }
 	}
 	
 	mean_time_to_happen = {
@@ -891,6 +893,7 @@ country_event = {
 			has_ruler_modifier = pol_sejm_refuse_timer
 		}
 		government = monarchy
+		NOT = { has_reform = polish_autocratic_monarchy }
 	}
 	
 	mean_time_to_happen = {
@@ -926,6 +929,7 @@ country_event = {
 			has_ruler_modifier = pol_sejm_refuse_timer
 		}
 		government = monarchy
+		NOT = { has_reform = polish_autocratic_monarchy }
 	}
 	
 	mean_time_to_happen = {
@@ -1641,7 +1645,10 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					is_capital = no
-					culture = polish
+					OR = {
+						culture = polish
+						culture = polish_new
+					}
 					religion = catholic
 					NOT = { province_id = 260 }
 				}
@@ -1650,7 +1657,10 @@ country_event = {
 			random_owned_province = {
 				limit = {
 					is_capital = no
-					culture = polish
+					OR = {
+						culture = polish
+						culture = polish_new
+					}
 					religion = catholic
 					NOT = { province_id = 260 }
 					NOT = { has_province_flag = reading_brest_bible }
@@ -1789,7 +1799,7 @@ country_event = {
 			exists = yes
 			is_subject = no
 			NOT = { junior_union_with = POL }
-			dynasty = "Jagiellon"
+			dynasty = "Jagiello"
 		}
 		NOT = { is_year = 1450 }
 	}
@@ -1815,7 +1825,7 @@ country_event = {
 	}
 	
 	option = {
-		name = flavor_pol.18.a #We must retain the Jagiellon Dynasty
+		name = flavor_pol.18.a #We must retain the Jagiello Dynasty
 		ai_chance = { 
 			factor = 75 
 		}
@@ -1983,7 +1993,7 @@ country_event = {
 		give_estate_land_share_large = { estate = estate_nobles }
 		if = {
 			limit = { NOT = { has_reform = celestial_empire } }
-			change_government_to_republic = yes
+			change_government = republic
 			add_government_reform = noble_elite_reform
 		}
 		hidden_effect = {
@@ -2059,8 +2069,7 @@ country_event = {
 	}
 }
 
-####Lions of the North#### scripted by William 'Big Boss' Samelis
-
+####Lions of the North####
 country_event = { #The Little Kings Uprising
 	id = flavor_pol.23
 	title = flavor_pol.23.t
@@ -2192,17 +2201,40 @@ country_event = { #The Constitution of [GetYear]
 		
 		ai_chance = { 
 			factor = 1
-			modifier = {
-				POL = { dynasty0 = 2 } 
-				factor = 1.5
-			}
+			#modifier = {
+			#	POL = { diplomatic_ideas = 2 } 
+			#	factor = 1.5
+			#}
 			modifier = { 
 				POL = { influence_ideas = 2 } 
 				factor = 1.5
 			}
 			modifier = { 
+				POL = { dynasty0 = 2 } 
+				factor = 1.5
+			}
+			modifier = { 
 				trust = { 
 					who = POL 
+					value = 100 
+				}
+				factor = 1.5 
+			}
+			#modifier = {
+			#	PLC = { diplomatic_ideas = 2 } 
+			#	factor = 1.5
+			#}
+			modifier = { 
+				PLC = { influence_ideas = 2 } 
+				factor = 1.5
+			}
+			modifier = { 
+				POL = { dynasty0 = 2 } 
+				factor = 1.5
+			}
+			modifier = { 
+				trust = { 
+					who = PLC 
 					value = 100 
 				}
 				factor = 1.5 
@@ -2230,11 +2262,23 @@ country_event = { #The Constitution of [GetYear]
 				desc = pol_as_long_as_allies_or_subjects
 			}
 		}
-		POL = { 
-			add_country_modifier = {
-				name = pol_polish_bohemian_ties_modifier
-				duration = -1 
-				desc = pol_as_long_as_allies_or_subjects
+		if = { 
+			limit = { exists = POL }
+			POL = { 
+				add_country_modifier = {
+					name = pol_polish_bohemian_ties_modifier
+					duration = -1 
+					desc = pol_as_long_as_allies_or_subjects
+				}
+			}
+		}
+		else = {
+			PLC = {
+				add_country_modifier = {
+					name = pol_polish_bohemian_ties_modifier
+					duration = -1 
+					desc = pol_as_long_as_allies_or_subjects
+				}
 			}
 		}
 	}
@@ -2243,8 +2287,10 @@ country_event = { #The Constitution of [GetYear]
 		name = flavor_pol.25.c 
 		
 		ai_chance = { factor = 0 } 
-		remove_historical_friend = POL 
-		POL = { 
+		if = { 
+			limit = { exists = POL }
+			remove_historical_friend = POL 
+			POL = { 
 			remove_historical_friend = ROOT 
 			add_casus_belli = {
 				type = cb_restore_personal_union
@@ -2253,7 +2299,19 @@ country_event = { #The Constitution of [GetYear]
 			} 
 		} 
 	}
-}		
+		else = {
+			remove_historical_friend = PLC 
+			PLC = { 
+				remove_historical_friend = ROOT 
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 300
+					target = BOH
+				} 
+			} 
+		}
+	}
+}
 
 country_event = { #Polish-Hungarian Ties 
 	id = flavor_pol.26
@@ -2272,17 +2330,40 @@ country_event = { #Polish-Hungarian Ties
 		
 		ai_chance = { 
 			factor = 1
-			modifier = {
-				POL = { dynasty0 = 2 } 
-				factor = 1.75
-			}
+			#modifier = {
+			#	POL = { diplomatic_ideas = 2 } 
+			#	factor = 1.75
+			#}
 			modifier = { 
 				POL = { influence_ideas = 2 } 
 				factor = 1.75
 			}
 			modifier = { 
+				POL = { dynasty0 = 2 } 
+				factor = 1.75
+			}
+			modifier = { 
 				trust = { 
 					who = POL 
+					value = 100 
+				}
+				factor = 1.5 
+			}
+			#modifier = {
+			#	PLC = { diplomatic_ideas = 2 } 
+			#	factor = 1.5
+			#}
+			modifier = { 
+				PLC = { influence_ideas = 2 } 
+				factor = 1.5
+			}
+			modifier = { 
+				PLC = { dynasty0 = 2 } 
+				factor = 1.75
+			}
+			modifier = { 
+				trust = { 
+					who = PLC 
 					value = 100 
 				}
 				factor = 1.5 
@@ -2309,12 +2390,24 @@ country_event = { #Polish-Hungarian Ties
 				duration = 9125
 			}
 		}
-		POL = { 
-			add_country_modifier = {
-				name = pol_polish_hungarian_ties_modifier
-				duration = 9125
+		if = {
+			limit = { exists = POL }
+			POL = { 
+				add_country_modifier = {
+					name = pol_polish_hungarian_ties_modifier
+					duration = 9125
+				}
 			}
 		}
+		else = {
+			PLC = {
+				add_country_modifier = {
+					name = pol_polish_hungarian_ties_modifier
+					duration = 9125
+				}
+			}
+		}
+		
 	}
 	
 	option = {
@@ -2322,14 +2415,27 @@ country_event = { #Polish-Hungarian Ties
 		
 		ai_chance = { factor = 0 } 
 		remove_historical_friend = POL 
-		POL = { 
-			remove_historical_friend = ROOT 
-			add_casus_belli = {
-				type = cb_restore_personal_union
-				months = 300
-				target = HUN
+		if = {
+			limit = { exists = POL }
+			POL = { 
+				remove_historical_friend = ROOT 
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 300
+					target = HUN
+				} 
 			} 
-		} 
+		}
+		else = {
+			PLC = { 
+				remove_historical_friend = ROOT 
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 300
+					target = HUN
+				} 
+			}
+		}
 	}
 }
 
@@ -2583,29 +2689,37 @@ country_event = { #The Crown of Rome
 		}
 		if = { 
 			limit = { 
-				BYZ = { 
+				LAE = { 
 					NOT = { is_subject_of = ROOT } 
 				}
 			}
 			thrace_area = {
-				add_core = BYZ 
+				add_core = LAE 
 			}
-			release = BYZ 
-			vassalize = BYZ 
+			release = LAE 
+			vassalize = LAE 
 		}
-		BYZ = { 
+		LAE = { 
 			change_religion = catholic
 			set_dynasty = ROOT
-			override_country_name = LAE
 			set_country_flag = is_LAE_flag
 			hidden_effect = { 
 				every_owned_province = { 
-					limit = { has_owner_religion = no } 
+					limit = {
+						region = balkan_region
+						has_owner_religion = no 
+					} 
 					change_religion = catholic 
 					change_culture = ROOT
 				}
 			}
-			add_accepted_culture = polish
+			if = {
+				limit = { has_updated_culture = { culture = slavic } }
+				add_accepted_culture = polish_new
+			}
+			else = {
+				add_accepted_culture = polish
+			}
 		}
 		151 = { 
 			if = { 

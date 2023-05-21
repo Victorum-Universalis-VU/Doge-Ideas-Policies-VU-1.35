@@ -182,6 +182,7 @@ NDiplomacy = {
 	HRE_VOTE_ROYAL_MARRIAGE = 10,
 	HRE_VOTE_CORE_CLAIM = -50,
 
+	IMPERIAL_AUTHORITY_MODIFIER_THRESHOLD = 50,										
 	COUNTERESPIONAGE_DISCOVER_CHANCE = 0.33,
 	COUNTERESPIONAGE_NETWORK_IMPACT = -0.50,
 	BUILD_SPY_DISCOVERED_PENALTY = -10.0,
@@ -520,6 +521,8 @@ NCountry = {
 	DISINHERIT_PRESTIGE_HIT = -50,
 	DISINHERIT_PRESTIGE_THRESHOLD = 0,
 	
+	ADVISOR_MIN_DEFAULT_AGE = 18, 				--Default value used for defining new advisors in script
+	ADVISOR_MAX_DEFAULT_AGE = 60,				--Default value used for defining new advisors in script																					   																				  
 	NEW_HEIR_PRESTIGE_HIT = -20,
 	NEW_HEIR_PRESTIGE_THRESHOLD = 0,
 	NEW_HEIR_LEGITIMACY_HIT = -20,
@@ -564,7 +567,7 @@ NCountry = {
 	COUNTRY_DEVELOPMENT_SCALE = 600,
 	OVERSEAS_CLIENT_STATES = 0,					-- Allow overseas client states?
 
-	ESTATE_DROP_LOYALTY_IF_LOST_PRIVILEDGE = -20,
+	ESTATE_DROP_LOYALTY_IF_LOST_PRIVILEDGE = -0.2,
 	ESTATE_ANGRY_THRESHOLD = 30,
 	ESTATE_HAPPY_THRESHOLD = 60,
 	ESTATE_LOYALTY_DECAY_BASE_MIN = 2.0,		-- Loyalty change per year at middle level.
@@ -619,15 +622,16 @@ NCountry = {
 
 
 	PARLIAMENT_BACKING_PERCENTAGE = 25,			-- average percent of seats backing an issue (0-100)
-	PARLIAMENT_ISSUE_DURATION = 10,				-- in years
+	PARLIAMENT_EFFECT_DURATION = 10,				-- in years
 	PARLIAMENT_DEBATE_DURATION = 5,				-- in years
 	NUM_PARLIAMENT_ISSUES = 5,
 	PARLIAMENT_PRESTIGE_HIT = -20,				-- penalty if failed debate.
 	PARLIAMENT_CHANCE_OF_DECISION = 10,			-- % Chance debate is ended after PARLIAMENT_DEBATE_DURATION
+	PARLIAMENT_RESET_COOLDOWN = 20,				-- how long before you can use reset again for parliament decisions																								   
 
 	ALLOW_FEMALE_GENERALS = 0,
 	FEMALE_ADVISOR_CHANCE = 2,						-- If Women in History is enabled, chance of an advisor (or general if permitted) spawning as female
-	MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 0.35,
+	MAX_IDEA_GROUPS_FROM_SAME_CATEGORY = 0.5,
 
 	RANDOM_LUCKY_BASE_WEIGHT = 100,					-- Base weight given to each nation when rolling for random lucky
 	RANDOM_LUCKY_DEVELOPMENT_WEIGHT = 0.4,			-- Increased this to 0.4 from 0.2 Extra weight given for each base development when rolling for random luck
@@ -651,11 +655,16 @@ NCountry = {
 	SUPPORT_OWN_HEIR_PRESTIGE_COST = 10,
 	SUPPORT_OWN_HEIR_SUPPORT_BONUS = 5,
 	ELECTIVE_HEIR_CLAIM_STRENGTH = 80,
-	MAX_ACTIVE_POLICIES = 12,						-- how many active policies at once.
-	MINIMUM_POLICY_TIME = 2,						-- how many years minimum for a policy
+	MAX_ACTIVE_POLICIES = 5,						-- how many active policies at once.
+	MINIMUM_POLICY_TIME = 10,						-- how many years minimum for a policy
 	POLICY_COST = 1,								-- Monthly cost per policy
-	BASE_POSSIBLE_POLICIES = 4,						-- How many policies in a category a nation can have as a base
+	BASE_POSSIBLE_POLICIES = 3,						-- How many policies in a category a nation can have as a base
 	BASE_FREE_POLICIES = 1,							-- How many policies in a category a nation get for free
+	SEIZE_COURT_RESOURCES_SUBJECT_LOSS_MULTIPLIER = 0.5, --when seizing court resources through interaction, how much does the subject lose as a proportion of what the overlord gains
+	MONTHS_OF_MANPOWER_FOR_SEIZE_COURT_RESOURCES = 12,
+	REQUEST_EXTRA_LEVIES_SUBJECT_LOSS_MULTIPLIER = 0.5, --when requesting extra levies through interaction, how much does the subject lose as a proportion of what the overlord gains
+	MONTHS_OF_MANPOWER_FOR_REQUEST_EXTRA_LEVIES = 12,
+	GRANT_ADMINISTRATIVE_AUTONOMY_REFORM_PROGRESS_COST = 20,
 
 	MIN_FEDERAL_AUTHORITY = -100,					-- federal authority cannot go lower than -100
 	MAX_WAR_EXHAUSTION = 20,
@@ -712,7 +721,7 @@ NCountry = {
 	POWER_MAX = 999,								-- how much power can be stored at maximum.
 	DISMANTLE_HRE_PRESTIGE = 100,					-- Prestige gain on dismantling HRE
 	CROWN_LANDS_ALERT_THRESHOLD = 30,
-	FREE_IDEA_GROUP_COST  = 7,						-- increased from 3 to 7
+	FREE_IDEA_GROUP_COST  = 3,						-- modifier on cheapness of "free" idea group
 	CONVERSION_COOLDOWN = 120,						-- months before you can convert again.
 	CONVERSION_COOLDOWN_SECONDARY = 120,			-- months before you can convert secondary religion again.
 
@@ -773,7 +782,7 @@ NCountry = {
 	PS_REMOVE_ACCEPTED_CULTURE = 10,
 	PS_REMOVE_ACCEPTED_CULTURE_UNREST_DURATION = 5,
 	PS_STRENGTHEN_GOVERNMENT = 100,
-	PS_BOOST_MILITARIZATION = 30,
+							  
 	PS_ESTABLISH_SIBERIAN_FRONTIER = 20,
 
 
@@ -783,7 +792,6 @@ NCountry = {
 	STRENGTHEN_GOVERNMENT_DEVOTION = 10,
 	STRENGTHEN_GOVERNMENT_MERITOCRACY = 10,
 
-	MIL_SOCIETY_BOOST_SIZE = 10,
 
 	CORE_COLONY = 0.5,								-- Multiplied with development, colonized by country or overseas
 	CORE_OVERSEAS = 0.5,							-- Multiplied with development, colonized by country or overseas
@@ -902,7 +910,7 @@ NCountry = {
 	LIBERTY_DESIRE_ANNEXATION = 0,					-- Liberty desire from being annexed
 	LIBERTY_DESIRE_DIPLOMATIC_REPUTATION = -3,		-- Liberty desire from diplomatic reputation
 
-	LIBERTY_DESIRE_GREAT_POWER_VASSAL = 50,			-- Liberty desire from vassal having more than 300 development
+	LIBERTY_DESIRE_GREAT_POWER_VASSAL = 0,			-- Liberty desire from vassal having more than 300 development
 	LIBERTY_DESIRE_HORDE = 10,						-- Liberty desire from vassal being a horde
 	LIBERTY_DESIRE_ROYAL_MARRIAGE = -5,				-- Liberty desire from having RM with overlord
 	LIBERTY_DESIRE_SCUTAGE_OFF = 25,				-- Liberty desire from turning off scutage
@@ -1027,13 +1035,13 @@ NCountry = {
 	HIGH_ARMY_PROFESSIONALISM_MAX_RANGE = 1.0,
 	ARMY_PROFESSIONALISM_PER_AGE = 0.2,
 	TRADING_POLICY_COOLDOWN_MONTHS  = 12,			-- Cooldown until you can change Trading Policy after selecting.
-	INNOVATIVENESS_FIRST_REACHED_TECH_LEVEL = 2.0,  -- Innovativeness bonus to first country (or countries) to reach a certain tech level.
-	INNOVATIVENESS_FIRST_PICKED_IDEA = 1,			-- Innovativeness bonus to first country (or countries) to pick an idea.
+	INNOVATIVENESS_FIRST_REACHED_TECH_LEVEL = 3.0,  -- Innovativeness bonus to first country (or countries) to reach a certain tech level.
+	INNOVATIVENESS_FIRST_PICKED_IDEA = 2.0,			-- Innovativeness bonus to first country (or countries) to pick an idea.
 	INNOVATIVENESS_BEHIND_IN_TECH_PENALTY = -0.1, 	-- Innovativeness penalty if behind neighbors in tech (and not ahead of time).
 	INNOVATIVENESS_ENABLE_ANY_BEHIND_IN_TECH_PENALTY = 0,	-- Enabled that if any tech is behind we apply the penalty. Turning this off will require you only to be ahead in one.
 	INNOVATIVENESS_ENABLE_PER_TECH_BEHIND_IN_TECH_PENALTY = 0, -- Enable that the penalty is applied for each tech we are behind in tech.
 	INNOVATIVENESS_AHEAD_OF_TIME_BONUS = 0.01, -- Bonus for being ahead of time in tech
-	INNOVATIVENESS_DAYS_AFTER_FIRST_PICK_VIABLE = 60, -- How many days you can still get innov
+	INNOVATIVENESS_DAYS_AFTER_FIRST_PICK_VIABLE = 120, -- How many days you can still get innov
 	INNOVATIVENESS_MAX = 100.0, -- Innovativeness Cap
 	MIN_HARSH_TREATMENT_COST = 5, -- Minimum harsh treatment cost
 	CAN_CONVERT_TERRITORY_CULTURE = 1, -- Defines if you are allowed to culture convert territory provinces
@@ -1219,10 +1227,11 @@ NEconomy = {
 
 NMilitary = {
 	SLACKEN_AP_DROP = 0.05,
-	SLACKEN_MANPOWER_INCREASE = 2.0,
+	SLACKEN_MIN_AP = 0,    							--Defines how much AP is at least needed to keep the Slacken Modifier active. Put a -1 here if you want the toggle to not turn off automatically
+	SLACKEN_MAX_MP_PERCENTAGE = 0.95,   			--Defines how much manpower percentage of your whole manpower pool you can have before the toggle turns off automatically. "1" would mean "100% of your manpower pool". Put a -1 here if you don't want this toggle to turn off from having manpower
 
 	DEVELOPMENT_FOR_BLOCKADE_COST = 0.5,
-	
+	COAST_RAID_RANGE = 2,							-- default coastal raid range
 
 	ARMY_DRILL_YEARLY_DECAY = -1.0,					-- Loss from not Drilling
 	ARMY_DRILL_YEARLY_GAIN = 10.0,					-- Gain from Drilling
@@ -1238,6 +1247,8 @@ NMilitary = {
 	CAWA_STARTING_MORALE = 0.5,						-- Starting morale of a cawa regiment, 1.0 being full strength
 	CAROLEAN_STARTING_STRENGTH = 1.0,
 	CAROLEAN_STARTING_MORALE = 0.1,
+	JANISSARIES_STARTING_STRENGTH = 0.1,
+	JANISSARIES_STARTING_MORALE = 0.1,
 	FORT_DEVASTATION_IMPACT = -10,					-- multiplied by fortlevel/max fortlevel in area per year.
 	REVANCHISM_DEVASTATION_IMPACT = -0.02,			-- 100 revanschism is -2 a year.
 	SURRENDER_DEVASTATION_IMPACT = -3.4,
@@ -1372,7 +1383,7 @@ NMilitary = {
 	DAYS_PER_PHASE = 3,								-- How many days each fire and shock phase lasts
 	DAYS_PER_SIEGE_PHASE = 30,						-- How many days each siege phase lasts
 	COMBAT_DICE_SIDE = 7,							-- How many sides the dice used in combat has
-	BLOCKADE_FACTOR = 1.5,								-- (Total sail speed / blockade_factor) * blockade_efficiency / province development
+	BLOCKADE_FACTOR = 3,								-- (Total sail speed / blockade_factor) * blockade_efficiency / province development
 	REBEL_RELOCATION_TIME = 2.0,						-- How long time it takes for rebels to relocate from island
 	REBEL_RELOCATION_DISTANCE_MAX = 200,					-- The maximum distance rebels will relocate to.
 	LEADER_MAX_PIPS = 6,								-- Max general/admiral pips (per skill)
@@ -1437,13 +1448,81 @@ NMilitary = {
 	HUSSARS_STARTING_STRENGTH = 1.0,
 	HUSSARS_STARTING_MORALE = 0.1, 
 
+	TERCIO_USES_CONSTRUCTION = 1,
+	TERCIO_BASE_COST_MODIFIER = 1.0,
+	TERCIO_MANPOWER_COST_MODIFIER = 1.0,
+	TERCIO_ARMY_TRADITION_COST = 0,
+	TERCIO_STARTING_STRENGTH = 1.0,
+	TERCIO_STARTING_MORALE = 0.1, 
+
+	MUSKETEER_USES_CONSTRUCTION = 1,
+	MUSKETEER_BASE_COST_MODIFIER = 1.0,
+	MUSKETEER_MANPOWER_COST_MODIFIER = 1.0,
+	MUSKETEER_PRESTIGE_COST = 0,
+	MUSKETEER_ABSOLUTISM_COST = 0,
+	MUSKETEER_STARTING_STRENGTH = 1.0,
+	MUSKETEER_STARTING_MORALE = 0.1, 
+
+	SAMURAI_USES_CONSTRUCTION = 1,
+	SAMURAI_BASE_COST_MODIFIER = 1.0,
+	SAMURAI_MANPOWER_COST_MODIFIER = 1.0,
+	SAMURAI_LEGITIMACY_COST = 0,
+	SAMURAI_STARTING_STRENGTH = 1.0,
+	SAMURAI_STARTING_MORALE = 0.1, 
+
+	GEOBUKSEON_USES_CONSTRUCTION = 1,
+	GEOBUKSEON_BASE_COST_MODIFIER = 1.0,
+	GEOBUKSEON_SAILORS_COST_MODIFIER = 1.0,
+	GEOBUKSEON_STARTING_STRENGTH = 1.0,
+	GEOBUKSEON_STARTING_MORALE = 1, 
+
+	MAN_OF_WAR_USES_CONSTRUCTION = 1,
+	MAN_OF_WAR_BASE_COST_MODIFIER = 1.0,
+	MAN_OF_WAR_SAILORS_COST_MODIFIER = 1.0,
+	MAN_OF_WAR_STARTING_STRENGTH = 1.0,
+	MAN_OF_WAR_STARTING_MORALE = 1, 
+
+	GALLEON_USES_CONSTRUCTION = 1,
+	GALLEON_BASE_COST_MODIFIER = 1.0,
+	GALLEON_SAILORS_COST_MODIFIER = 1.0,
+	GALLEON_STARTING_STRENGTH = 1.0,
+	GALLEON_STARTING_MORALE = 1, 
+
+	GALLEASS_USES_CONSTRUCTION = 1,
+	GALLEASS_BASE_COST_MODIFIER = 1.0,
+	GALLEASS_SAILORS_COST_MODIFIER = 1.0,
+	GALLEASS_STARTING_STRENGTH = 1.0,
+	GALLEASS_STARTING_MORALE = 1, 
+
+	CARAVEL_USES_CONSTRUCTION = 1,
+	CARAVEL_BASE_COST_MODIFIER = 1.0,
+	CARAVEL_SAILORS_COST_MODIFIER = 1.0,
+	CARAVEL_STARTING_STRENGTH = 1.0,
+	CARAVEL_STARTING_MORALE = 1, 
+
+	VOC_INDIAMEN_USES_CONSTRUCTION = 1,
+	VOC_INDIAMEN_BASE_COST_MODIFIER = 1.0,
+	VOC_INDIAMEN_SAILORS_COST_MODIFIER = 1.0,
+	VOC_INDIAMEN_STARTING_STRENGTH = 1.0,
+	VOC_INDIAMEN_STARTING_MORALE = 1, 
+
+	STRELSKY_STARTING_STRENGTH = 1.0,
+	COSSACKS_STARTING_STRENGTH = 1.0,
+	MARINES_STARTING_STRENGTH = 1.0,
+	RAJPUT_STARTING_STRENGTH = 1.0,
+	REVOLUTIONARY_GUARD_STARTING_STRENGTH = 1.0,
+	
 	SPECIAL_REGIMENT_ESTATE_LOYALTY_COST = 0.0,		-- Estate loyalty cost of recruiting thei related special troops
 	NAVAL_DOCTRINE_SAILORS_COST = 0.1,				-- Cost for switching naval doctrine (Share of sailors)
 	NAVAL_DOCTRINE_MIN_FORCE_LIMIT = 20,			-- Minimum naval force limit to be able to select a naval doctrine
 	LEAGUE_LEADER_CHANGE_SCORE_THRESHOLD = 1.5,		-- Score * factor needed for leader change (Compared to current leader)
 	MAX_DRILL_DECAY = 0.9,							-- Drill can never Decay with more than this value.
+	MIN_DRILL_DECAY = 0,							-- Drill can never Decay with less than this value.
 	AREA_REBEL_SUPPRESSION_MULTIPLIER = 5.0,		-- Armies suppressing rebels in areas adds this/<number of suppressed provinces> to rebel suppression in affected provinces.
 
+	STRELTSY_BASE_COST_MODIFIER = 1.0,
+	STRELTSY_MANPOWER_COST_MODIFIER = 1.0,
+	STRELTSY_STARTING_MORALE = 1, 
 	BANNER_USES_CONSTRUCTION = 0,
 	STRELTSY_USES_CONSTRUCTION = 1,
 	COSSACKS_USES_CONSTRUCTION = 1,
@@ -1903,7 +1982,7 @@ NAI = {
 	DIPLOMATIC_ACTION_SOW_DISCONTENT_RIVAL_FACTOR = 25, -- AI scoring for sowing discontent is increased by this if they are rivals
 	DIPLOMATIC_ACTION_AGITATE_FOR_LIBERTY_ANTAGONIZE_FACTOR = 25, -- AI scoring for agitating for liberty is increased by this if they have an attitude with 'antagonize' desire
 	DIPLOMATIC_ACTION_AGITATE_FOR_LIBERTY_RIVAL_FACTOR = 25, -- AI scoring for agitating for liberty is increased by this if they are rivals
-	DIPLOMATIC_ACTION_AGITATE_FOR_LIBERTY_DEVELOPMENT_FACTOR = 0.15, -- AI scoring for agitate for liberty multiplied by development of subject agitated.
+	DIPLOMATIC_ACTION_AGITATE_FOR_LIBERTY_DEVELOPMENT_FACTOR = 0.10, -- AI scoring for agitate for liberty multiplied by development of subject agitated.
 	DIPLOMATIC_ACTION_AGITATE_FOR_LIBERTY_LD_FACTOR = 2, -- AI scoring for agitate for liberty multiplied by liberty desire percentage of subject agitated.
 	DIPLOMATIC_ACTION_SABOTAGE_REPUTATION_ANTAGONIZE_FACTOR = 25, -- AI scoring for sabotage reputation is increased by this if they have an attitude with 'antagonize' desire
 	DIPLOMATIC_ACTION_SABOTAGE_REPUTATION_RIVAL_FACTOR = 25, -- AI scoring for sabotage reputation is increased by this if they are rivals
@@ -2309,6 +2388,20 @@ NGui = {
 	AUTO_SELECT_EVENT_MONTHS = 4,
 	LEDGER_GUI_OBJECT_OFFSET = -5,
 	LEDGER_RIGHT_ALIGNED_COLUMN_PADDING = 20,
+	CELESTIAL_EMPIRE_VIEW_MAX_LINES = 4,
+	DECISION_COLOR_R = 60,
+	DECISION_COLOR_G = 117,
+	DECISION_COLOR_B = 165,
+	MAJOR_DECISION_COLOR_R = 146,
+	MAJOR_DECISION_COLOR_G = 174,
+	MAJOR_DECISION_COLOR_B = 114,
+	PARLIAMENT_SEAT_COLOR_R = 60,
+	PARLIAMENT_SEAT_COLOR_G = 117,
+	PARLIAMENT_SEAT_COLOR_B = 165,
+	PARLIAMENT_DEBATE_COLOR_R = 60,
+	PARLIAMENT_DEBATE_COLOR_G = 117,
+	PARLIAMENT_DEBATE_COLOR_B = 165,
+	MAX_WAR_PARTICIPANTS_IN_TOOLTIPS = 40,
 },
 
 NEngine = {
@@ -2586,39 +2679,7 @@ NNationDesigner = {
 
 NGovernment = {
 	SELECT_HEIR_FROM_HAREM_AT_MONARCH_AGE = 30, -- The age in years when an heir is selected if the government "has_harem" flag is set.
-	RUSSIAN_ABILITY_COST = 100,
-	RUSSIAN_ABILITY_POOL_SIZE = 150,
-	RUSSIAN_ABILITY_BASE_GAIN = 3,
-	RUSSIAN_ABILITY_SUDEBNIK_MIN_AUTONOMY = 10,
-	RUSSIAN_ABILITY_SUDEBNIK_AUTONOMY_CHANGE = -10,
-	RUSSIAN_ABILITY_OPRICHNINA_THRESHOLD = 0.3,
-	RUSSIAN_ABILITY_OPRICHNINA_AI_THRESHOLD = 0.85, -- AI will use ability when revolt risk is 90%, or when they have full power
-	RUSSIAN_ABILITY_OPRICHNINA_CHANGE = -0.3,
-	RUSSIAN_ABILITY_STRELTSY_WE_CHANGE = -2,
-	RUSSIAN_ABILITY_STRELTSY_SPAWN_SIZE = 0.2,
-
-	IQTA_POLICY_COOLDOWN_YEARS = 20,
-	EFFICIENT_FARMING_DUCAT_MULTIPLIER = 2,
-	LAND_AQUISITION_MANPOWER_MULTIPLIER = 0.05,
-	SEIZE_CLERICAL_HOLDINGS_COST = 50,
-	INVITE_MINORITIES_COST = 50,
-	SANCTION_HOLY_WAR_COST = 50,
-	FEUDAL_THEOCRACY_INTERACTION_COOLDOWN_YEARS = 5,
-	MAMLUK_ABILITY_POOL_SIZE = 150,
-	MAMLUK_ABILITY_COST = 100,
-	MAMLUK_RECRUIT_MANPOWER_MULTIPLIER = 50,
-	MAMLUK_SELL_SLAVES_DUCATS_MULTIPLIER = 2,
-	PROMOTE_MAMLUK_CULTURE_DURATION_YEARS = 1,
-	TRAIN_HORSEMANSHIP_DURATION_YEARS = 10,
-	CONSCRIPT_FROM_TRIBES_AMOUNT = 6,
-	CONSCRIPT_FROM_TRIBES_TIME = 0.25,
-	TRIBAL_ALLEGIANCE_MAX = 100,
-	YEARLY_TRIBAL_ALLEGIANCE_MAX = -3.0,
 	TRIBAL_ALLEGIANCE_HUMILIATE = 30.0, -- TA gained from doing Humiliate or Show Strength in a war.
-	TRIBAL_FEDERATION_ABILITY_COST = 30,
-	ENLIST_GENERAL_TRADITION = 40,
-	SANCTION_HOLY_WAR_LIST_SIZE = 7,
-	INVITE_MINORITIES_GAIN = 1,
 	GOVERNMENT_REFORM_BASE_COST = 100.0,
 	GOVERNMENT_REFORM_COST_INCREASE = 25.0, -- Was 50 before GE merge
 	GOVERNMENT_REFORM_YEARLY_BASE_PROGRESS = 10.0,
@@ -2633,11 +2694,6 @@ NGovernment = {
 	DICTATORSHIP_TO_MONARCHY_REFORM_PENALTY = 4,
 	NATIVE_REFORM_REFORM_PENALTY = 2,
 	EXPAND_ADMIN_COST = 20.0,
-	RECEIVE_SERFS_DEVELOPMENT = 1,
-	RECEIVE_SERFS_MODIFIER_ON_RIVAL_DURATION_DAYS = 3650,
-	COSSACKS_ABILITY_COSSACKS_SPAWN_SIZE = 0.2,
-	COSSACKS_ABILITY_COSSACKS_WE_CHANGE = -2,
-	RAIDING_PARTIES_MODIFIER_DURATION = 10,
 	LEGACY_NATIVES_REFORM_REPUBLIC_SPONSOR = "oligarchic_republic",
 	LEGACY_NATIVES_REFORM_MONARCHY_SPONSOR = "despotic_monarchy",
 	LEGACY_NATIVES_REFORM_THEOCRACY_SPONSOR = "theocratic_government",

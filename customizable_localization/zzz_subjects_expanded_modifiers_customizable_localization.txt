@@ -11,12 +11,14 @@ defined_text = {
 }
 
 defined_text = {
+    #name = diplomatic_ideas
 	name = dynasty0
 
 	text = {
 		trigger = {
 			always = yes
 		}
+		#localisation_key = diplomatic_ideas
 		localisation_key = dynasty0
 	}
 }

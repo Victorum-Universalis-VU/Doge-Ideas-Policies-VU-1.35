@@ -1,12 +1,13 @@
 #Country Name: Please see filename.
 
-graphical_culture = latingfx #westerngfx
+graphical_culture = westerngfx
 
 color = { 213  132  76 }
 
 revolutionary_colors = { 8 5 8 }
 
-historical_idea_groups = {}
+historical_idea_groups = {
+}
 
 historical_units = {
 	western_medieval_infantry
@@ -37,7 +38,7 @@ monarch_names = {
 	"Ferran #2" = 5
 	"Jaume #2" = 5
 	"Martí #1" = 5
-	"Ambrós #0" = 0
+	"MONARCH_NAME_AMBROS" = 0
 	"Andreu #0" = 0
 	"Antoni #0" = 0
 	"Arnau #0" = 0

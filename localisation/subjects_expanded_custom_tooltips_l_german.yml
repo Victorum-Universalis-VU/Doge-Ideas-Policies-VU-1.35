@@ -163,6 +163,7 @@
  AT_LEAST_5_YEARS_AFTER_DUTCH_PROVINCES_REFORM_2: "§YExterne Vrede§! wurde vor mindestens §Y5 Jahren§! verabschiedet"
  AT_LEAST_5_YEARS_AFTER_DUTCH_PROVINCES_REFORM_3: "§YSuccessiewet§! wurde vor mindestens §Y5 Jahren§! verabschiedet"
 
+ #DUTCH_PROVINCE_SUBJECT_NO_STAB_HIT_WITH_IDEAS_TT: "Wenn Ihr die §Y[administrative_ideas]§! oder die §Y[diplomatic_ideas]§! abscjließt, wird der Stabilitätsverlust entfernt.\n"
  DUTCH_PROVINCE_SUBJECT_NO_STAB_HIT_WITH_IDEAS_TT: "Wenn Ihr die §Y[administrative_ideas]§! oder die §Y[dynasty0]§! abscjließt, wird der Stabilitätsverlust entfernt.\n"
  DUTCH_PROVINCE_SUBJECT_NO_INTERNAL_WAR_TT: "\nNiederländische Provinzen erhalten folgende Boni: \n   Diplomatische Reputation: §G+1.00§! \nDer Lehnsherr erhält die folgenden Boni: \n   [Root.GetDutchProvinceReformLegitimacyBonus] \n\n§YNiederländische Provinzen können keine Kriege gegen andere Niederländische Provinzen desselben Lehnsherrn mehr erklären.§!\n"
  DUTCH_PROVINCE_SUBJECT_NO_EXTERNAL_WAR_TT: "\nNiederländische Provinzen erhalten folgende Boni: \n   Entwicklungskosten: §G-10.00%§! \n   Baukosten: §G-10.00%§! \nDer Lehnsherr erhält die folgenden Boni: \n   Aggressive Expansion: §G-10.00%§! \n   Armeeunterhaltskosten: §G-10.00%§! \n\n§YNiederländische Provinzen können keine Kriege mehr erklären, außer wenn Rittersteuer für sie aktiviert ist.§!\n"

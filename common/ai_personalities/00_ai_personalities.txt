@@ -48,6 +48,10 @@ ai_capitalist = {
 			factor = 1.1
 			economic_ideas = 1
 		}
+		#modifier = {
+		#	factor = 1.1
+		#	plutocracy_ideas = 1
+		#}
 		modifier = {
 			factor = 1.1
 			staatsverwaltung0 = 1
@@ -120,6 +124,10 @@ ai_diplomat = {
 			factor = 1.5
 			dip = 6
 		}
+		#modifier = {
+		#	factor = 1.1
+		#	aristocracy_ideas = 1
+		#}
 		modifier = {
 			factor = 1.1
 			monarchie0 = 1
