@@ -181,6 +181,7 @@ has_russian_government_interaction = {
 	OR = {
 		has_reform = tsardom
 		has_reform = principality
+		has_reform = greek_principality
 		has_reform = veche_republic
 	}
 }
