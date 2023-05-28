@@ -49,7 +49,7 @@ leader_names = {
 }
 
 ship_names = {
-    Canepa Casole Castellaro Montalbo Murata "Santa Mustiola" "Cà Berlone"
+    Canepa Casole Castellaro Montalbo Murata "Santa Mustiola" "Cà Berlone" "Giuliano Fattori" "Giambattista Belluzzi" "Innocenzo Bonelli"
 }
 
 army_names = {

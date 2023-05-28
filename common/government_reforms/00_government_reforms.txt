@@ -3484,6 +3484,7 @@ western_principality_legacy = {
 		    culture_group = latin
 		    culture_group = low_franconian
 		    culture_group = scandinavian
+			culture_group = illyrian
 		}
 	}
 
