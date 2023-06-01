@@ -681,7 +681,7 @@ age_of_reformation = {
 		obj_humanism_religious = {
 			OR = {
 				full_idea_group = humanist_ideas
-				has_completed_religious_idea_group = has_completed_religious_idea_group
+				has_completed_religious_idea_group = yes
 			}
 		}
 		obj_convert_10_provinces = {
