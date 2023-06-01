@@ -3079,6 +3079,79 @@ irish_clann_legacy = {
 	ai = { factor = 1 }
 }
 
+#VU 1.35 additions by San Felipe
+earldom_legacy = {
+	icon = "crown"
+	legacy_government = yes
+	allow_normal_conversion = no
+	valid_for_new_country = no
+	allow_convert = no
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	nation_designer_trigger = {
+		culture_group = british
+		capital_scope = { region = british_isles_region }
+		num_of_cities = 5
+	}
+	monarchy = yes
+	fixed_rank = 1
+	modifiers = {
+		production_efficiency = -0.05
+		global_institution_spread = -0.05
+		unjustified_demands = -0.2
+		max_absolutism = -10
+	}
+	ai = { factor = 1 }
+}
+
+### Welsh Governments ###
+welsh_earldom_legacy = {
+	icon = "crown"
+	legacy_government = yes
+	allow_normal_conversion = no
+	valid_for_new_country = no
+	allow_convert = no
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	nation_designer_trigger = {
+		primary_culture = welsh
+		capital_scope = { region = british_isles_region }
+		num_of_cities = 5
+	}
+	monarchy = yes
+	fixed_rank = 1
+	modifiers = {
+		production_efficiency = -0.05
+		global_institution_spread = -0.05
+		unjustified_demands = -0.2
+		max_absolutism = -10
+	}
+	ai = { factor = 1 }
+}
+
+welsh_cammote_legacy = {
+	icon = "crown"
+	legacy_government = yes
+	allow_normal_conversion = no
+	valid_for_new_country = no
+	allow_convert = no
+	valid_for_nation_designer = yes
+	nation_designer_cost = -10
+	nation_designer_trigger = {
+		primary_culture = welsh
+		capital_scope = { region = british_isles_region }
+	}
+	monarchy = yes
+	fixed_rank = 1
+	modifiers = {
+		stability_cost_modifier = -0.1
+		global_institution_spread = -0.1
+		global_manpower_modifier = 0.25
+		max_absolutism = -10
+	}
+	ai = { factor = 1 }
+}
+
 norman_lordship_legacy = {
 	icon = "crown"
 	legacy_government = yes
@@ -3822,7 +3895,7 @@ directory_republic_legacy = {
 	}
 }
 
-greek_lordship_legacy = {
+greek_catepanates_legacy = {
 	# government mechanics flags go here
 	icon = "crown"
 	legacy_government = yes
@@ -3861,7 +3934,7 @@ greek_lordship_legacy = {
 	}
 }
 
-greek_duchy_legacy = {
+greek_ducates_legacy = {
 	icon = "crown"
 	legacy_government = yes
 	allow_normal_conversion = no
@@ -3887,46 +3960,45 @@ greek_duchy_legacy = {
 	ai = { factor = 1 }
 }
 
-greek_principality_legacy = {
-	# government mechanics flags go here
-	icon = "crown"
-	legacy_government = yes
-	monarchy = yes
-	allow_normal_conversion = no
+#greek_aparchate_legacy = {
+#	# government mechanics flags go here
+#	icon = "crown"
+#	legacy_government = yes
+#	monarchy = yes
+#	allow_normal_conversion = no
+#
+#	valid_for_new_country = no
+#	allow_convert = no
+#
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 5
+#	nation_designer_trigger = {
+#		OR = {
+#			culture_group = byzantine
+#		    culture_group = south_slavic
+#		}
+#		religion = orthodox
+#	}
+#
+#	modifiers = {
+#		governing_capacity = 150
+#		global_unrest = -1
+#		global_tax_modifier = 0.05
+#	}
+#
+#	conditional = {
+#		allow = { has_dlc = "Third Rome" }
+#		government_abilities = {
+#			russian_mechanic
+#		}
+#	}
+#
+#	ai = {
+#		factor = 5
+#	}
+#}
 
-	valid_for_new_country = no
-	allow_convert = no
-
-	valid_for_nation_designer = yes
-	nation_designer_cost = 5
-	nation_designer_trigger = {
-		OR = {
-			culture_group = byzantine
-		    culture_group = south_slavic
-		}
-		religion = orthodox
-	}
-
-    fixed_rank = 1
-	modifiers = {
-		governing_capacity = 150
-		global_unrest = -1
-		global_tax_modifier = 0.05
-	}
-
-	conditional = {
-		allow = { has_dlc = "Third Rome" }
-		government_abilities = {
-			russian_mechanic
-		}
-	}
-
-	ai = {
-		factor = 5
-	}
-}
-
-greek_provincial_kingdom_legacy = {
+greek_exarchates_legacy = {
 	icon = "crown"
 	legacy_government = yes
 	allow_normal_conversion = no

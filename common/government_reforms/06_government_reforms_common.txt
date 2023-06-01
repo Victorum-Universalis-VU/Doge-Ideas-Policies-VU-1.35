@@ -3487,7 +3487,7 @@ streltsy_reform = {
 		}
 		OR = {
 			has_reform = principality
-			has_reform = greek_principality
+			#has_reform = greek_aparchate_reform
 			has_reform = veche_republic
 			has_reform = tsardom
 			has_reform = ruthenian_tsardom

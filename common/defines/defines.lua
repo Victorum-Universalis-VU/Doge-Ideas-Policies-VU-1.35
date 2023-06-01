@@ -1,7 +1,7 @@
 NDefines = {
 
 NGame = {
-	START_DATE = "1444.11.11",
+	START_DATE = "1215.06.15",
 	END_DATE = "1903.12.31",
 	MAX_RANDOM_NEW_WORLD = "1492.1.1",
 
