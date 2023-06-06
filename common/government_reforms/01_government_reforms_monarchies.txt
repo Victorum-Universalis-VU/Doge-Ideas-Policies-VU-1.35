@@ -1518,14 +1518,14 @@ barbary_sultanate_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-		    culture_group = maghrebi
+		    #culture_group = maghrebi #maghrebi culture group was replace by berber_group. Leaving that here as reminder
 			culture_group = berber_group
 		}
 	}
 	queen = no
 	nation_designer_trigger = {
 		OR = {
-		    culture_group = maghrebi
+		    #culture_group = maghrebi #maghrebi culture group was replace by berber_group. Leaving that here as reminder
 			culture_group = berber_group
 		}
 	}
