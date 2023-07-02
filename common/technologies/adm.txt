@@ -1,4 +1,5 @@
 #VU updated by San Felipe for 1.35
+#Pre 1444 Techs added by Quonton
 monarch_power = ADM
 
 # applied when a country is ahead of time in this technology
@@ -11,7 +12,7 @@ ahead_of_time = {
 # Pre-era techs
 technology = { #Tribal Government
 	# Tech 0
-	year = 1350
+	year = 1150
 	
 	tribal_despotism_legacy = yes 	
 	tribal_federation_legacy = yes 
@@ -30,18 +31,18 @@ technology = { #Tribal Government
 
 technology = { #Advanced Tribes
 	# Tech 1
-	year = 1390
+	year = 1190
 	expects_institution = {
 		feudalism = 0.25
 	}
-	allowed_idea_groups = 1
+#	allowed_idea_groups = 1
 	tribal_democracy_legacy = yes
 	tribal_kingdom_legacy = yes
 }
 
 technology = { #Feudal Monarchy
 	# Tech 2
-	year = 1420
+	year = 1196
 	expects_institution = {
 		feudalism = 0.5
 	}
@@ -56,21 +57,236 @@ technology = { #Feudal Monarchy
 
 technology = { #Medieval Administration
 	# Tech 3
-	year = 1440
+	year = 1214
 	expects_institution = {
 		feudalism = 0.5
 	}
-	allowed_idea_groups = 2
+	#allowed_idea_groups = 2
 	production_efficiency	=	0.015
 	may_support_rebels = yes
 	# abyssian007 edit make the road available at a tech level  
 }
- 
+
+technology = { #Royal Charters
+	# Tech 4
+	year = 1232
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+	}
+
+	production_efficiency = 0.01		
+}
+
+technology = { #Centralisation Attempts
+	# Tech 5
+	year = 1245
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+	}
+
+	administrative_efficiency = 0.02
+}
+
+
+
+technology = { #Parlament and Republican Regimes
+	# Tech 6
+	year = 1258
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+	}
+
+	production_efficiency = 0.01
+}
+
+
+technology = { #Agriculture
+	# Tech 7  
+	year = 1271
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	production_efficiency = 0.025
+	development_efficiency = 0.025
+}
+
+
+technology = { #Legal Systems
+	# Tech 8
+	year = 1284
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01
+}
+
+
+technology = {  #Religion
+	#Tech 9
+	year = 1297
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01
+}
+
+
+technology = { #Bureaucracy 
+	#Tech 10
+	year = 1310
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	governing_capacity = 100
+}
+
+
+technology = {  #New Governments
+	# Tech 11
+	year = 1323
+	#THIS IS COPY PASTE NEEDS WORK
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01
+}
+
+technology = {  # Civil Service 
+	# Tech 12
+	year = 1336
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+		production_efficiency = 0.01
+}
+
+technology = { # Constable
+	# Tech 13
+	year = 1349
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+	allowed_idea_groups = 1
+	governing_capacity = 100
+}
+
+technology = {  # Organized Courts
+	# Tech 14
+	year = 1362
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01
+}
+
+technology = {  # Early Machinery
+	# Tech 15
+	year = 1375
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	production_efficiency = 0.02
+}
+
+technology = {  # Royal Officials
+	# Tech 16
+	year = 1388
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01	
+}
+
+technology = {  # Late Feudalism
+	# Tech 17
+	year = 1401
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	production_efficiency = 0.02
+	development_efficiency = 0.03
+}
+
+technology = {  # Better Tax Collection
+	# Tech 18
+	year = 1414
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+	allowed_idea_groups = 2
+	administrative_efficiency = 0.01	
+}
+
+technology = {  # Council of Constance
+	# Tech 19
+	year = 1427
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.01	
+}
+
+technology = {  #Husite Wars
+	# Tech 20
+	year = 1440
+	expects_institution = {
+		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
+	}
+
+	administrative_efficiency = 0.02
+}
+
+#End of pre-1444 techs
+
 technology = { #Temples
 	# Tech 4
 	year = 1453
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.05
+		medicine = 0.05
 	}
 
 	# Temple Building
@@ -83,6 +299,8 @@ technology = { #National Ideas
 	year = 1466
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.1
+		medicine = 0.1
 		renaissance = 0.15
 	}
 	allowed_idea_groups = 3
@@ -94,6 +312,8 @@ technology = { #Workshop
 	year = 1479
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.15
+		medicine = 0.15
 		renaissance = 0.3
 	}
 
@@ -109,6 +329,8 @@ technology = { #Renaissance Thought
 	year = 1492
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.25
+		medicine = 0.25
 		renaissance = 0.5
 	}
 	
@@ -123,6 +345,8 @@ technology = { #Courthouse
 	year = 1505
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.25
+		medicine = 0.25
 		renaissance = 0.5
 	}
 
@@ -137,6 +361,8 @@ technology = { #The Scythe
 	year = 1518
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.25
+		medicine = 0.25
 		renaissance = 0.5
 		new_world_i = 0.15
 	}
@@ -148,9 +374,11 @@ technology = { #The Scythe
 
 technology = { #Modern Theocracy
 	# Tech 10
-	year = 1531		
+	year = 1531
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.4
+		medicine = 0.4
 		renaissance = 0.5
 		new_world_i = 0.3
 	}
@@ -166,6 +394,8 @@ technology = { #Textile Manufactory
 	year = 1544
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.4
+		medicine = 0.4
 		renaissance = 0.5
 		new_world_i = 0.5
 	}
@@ -180,6 +410,8 @@ technology = { #Early Modern Administration
 	year = 1557
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.4
+		medicine = 0.4
 		renaissance = 0.5
 		new_world_i = 0.5
 	}
@@ -198,6 +430,8 @@ technology = { #Improved Drainage
 	year = 1570
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.15
@@ -213,6 +447,8 @@ technology = { #Scientific Experimentation
 	year = 1583
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.3
@@ -228,6 +464,8 @@ technology = { #Military Administration
 	year = 1596
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -243,6 +481,8 @@ technology = { #Metallurgy
 	year = 1609
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -257,11 +497,13 @@ technology = { #University
 	year = 1622
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
 		global_trade = 0.15
-    }
+	}
 
 	governing_capacity = 750	#Dev doubled but cap gains not?
 
@@ -277,6 +519,8 @@ technology = { #National Sovereignty
 	year = 1635
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -289,6 +533,8 @@ technology = { #Cathedral
 	year = 1648
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -305,6 +551,8 @@ technology = { #Absolute Rulership
 	year = 1661
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -320,6 +568,8 @@ technology = { #Land Clearance
 	year = 1674
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -337,6 +587,8 @@ technology = { #The Constitution
 	year = 1687
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -356,6 +608,8 @@ technology = { #Measuring the World
 	year = 1700
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -373,6 +627,8 @@ technology = { #Bonds and Tontines
 	year = 1713
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -397,6 +653,8 @@ technology = { #Improved Production
 	#Newcomen Engine
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -418,6 +676,8 @@ technology = { #Separation of Powers
 	#Separation of Powers
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -432,6 +692,8 @@ technology = { #Modern Bureaucracy
 	year = 1752
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -449,6 +711,8 @@ technology = { #Rotherham Plough
 	#Modern Bureaucracy
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -459,8 +723,8 @@ technology = { #Rotherham Plough
 	}
 	#Rotherham Plough
 	production_efficiency 	=	0.050
-	administrative_efficiency = 0.25
-    development_cost_modifier = -0.25
+	administrative_efficiency = 0.15
+	development_cost_modifier = -0.20
 	governing_capacity = 1500	#Dev doubled but cap gains not?
 }
 
@@ -469,6 +733,8 @@ technology = { #Rights of Man
 	year = 1778
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -495,6 +761,8 @@ technology = { #Advanced Production
 	production_efficiency 	=	0.060
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -510,6 +778,8 @@ technology = { #Revolutionary Ideals
 	year = 1804
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -530,6 +800,8 @@ technology = { #Four Field Rotation
 	year = 1817
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -554,6 +826,8 @@ technology = {
 	year = 1830
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -574,6 +848,8 @@ technology = {
 	year = 1843
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -596,6 +872,8 @@ technology = {
 	year = 1856
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -607,7 +885,7 @@ technology = {
 	}
 
 	#Secularism
-	administrative_efficiency = 0.3
+	administrative_efficiency = 0.2
 	governing_capacity = 2000	#Dev doubled but cap gains not?
 	allowed_idea_groups = 18
 }
@@ -617,6 +895,8 @@ technology = {
 	year = 1869
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -639,6 +919,8 @@ technology = {
 	year = 1882
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -660,6 +942,8 @@ technology = {
 	year = 1895
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -680,6 +964,8 @@ technology = {
 	year = 1908
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -701,6 +987,8 @@ technology = {
 	year = 1921
 	expects_institution = {
 		feudalism = 0.5
+		gunpowder_warfare = 0.5
+		medicine = 0.5
 		renaissance = 0.5
 		new_world_i = 0.5
 		printing_press = 0.5
@@ -714,5 +1002,5 @@ technology = {
 
 	#Electrification
 	production_efficiency 	=	0.085
-	development_cost_modifier = -0.35
+	development_cost_modifier = -0.25
 }
