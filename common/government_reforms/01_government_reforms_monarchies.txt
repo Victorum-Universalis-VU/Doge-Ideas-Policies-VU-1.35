@@ -444,7 +444,7 @@ absolutist_france_reform = {
 	nation_designer_cost = 50
 	nation_designer_trigger = {
 		culture_group = french
-		technology_group = western
+		technology_group = french_tech_group
 		capital_scope = { region = france_region }
 	}
 	lock_level_when_selected = yes
@@ -1133,7 +1133,7 @@ byzantine_transitional_gov_reform = {
 	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	potential = {
-		OR = {
+		OR = { #False positive
 			has_reform = byzantine_transitional_gov_reform
 			have_had_reform = byzantine_transitional_gov_reform
 			has_reform = byzantine_autocracy_reform
@@ -6815,107 +6815,179 @@ provincial_kingdom_reform = { #T2
 	}
 }
 
-earldom_reform = { #T2
-	icon = "chieftain"
+#VU 1.35 Welsh minors
+welsh_lordship_reform = { #T1
+	icon = "castle"
 	allow_normal_conversion = no
-	legacy_equivalent = earldom_legacy
+	potential = {
+		primary_culture = welsh
+		#NOT = { culture_group = south_slavic }
+		capital_scope = { region = british_isles_region }
+		NOT = { has_reform = welsh_duchy_reform }
+	}
+	lock_level_when_selected = yes
+	legacy_equivalent = welsh_lordship_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+	    primary_culture = welsh
+		#NOT = { culture_group = south_slavic }
+		capital_scope = { region = british_isles_region }
+	}
+	fixed_rank = 1
+	modifiers = {
+		production_efficiency = 0.15
+		global_tax_modifier = 0.15
+		diplomatic_reputation = -2
+		max_absolutism = 10
+	}
+}
+
+welsh_duchy_reform = { #T2
+	icon = "castle"
+	allow_normal_conversion = no
+	legacy_equivalent = welsh_duchy_legacy
 	valid_for_nation_designer = no
 	fixed_rank = 1
 	potential = {
-		culture_group = british
-		religion_group = christian
+	    primary_culture = welsh
+		#NOT = { culture_group = south_slavic }
 		capital_scope = { region = british_isles_region }
-		NOT = { has_reform = tanistry_reform }
-		NOT = { religion = orthodox }
-		NOT = { government_rank = 2 }
+		NOT = { has_reform = welsh_monarchy_reform }
 	}
 	modifiers = {
-		stability_cost_modifier = -0.1
-		global_manpower_modifier = 0.25
-		global_institution_spread = -0.05
-		max_absolutism = -10
+		production_efficiency = 0.15
+		global_tax_modifier = 0.15
+		diplomatic_reputation = -1
+		max_absolutism = 10
 	}
 }
+
+welsh_monarchy_reform = { #T3
+	icon = "english_monarchy"
+	allow_normal_conversion = no
+	potential = {
+	    primary_culture = welsh
+		capital_scope = { region = british_isles_region }
+		has_reform = welsh_monarchy_reform
+	}
+	lock_level_when_selected = yes
+	legacy_equivalent = welsh_monarchy_legacy
+	valid_for_nation_designer = no
+	start_territory_to_estates = 0.3
+	modifiers = {
+		production_efficiency = 0.1
+		global_tax_modifier = 0.1
+		global_autonomy = -0.05
+		max_absolutism = 10
+	}
+	conditional = {
+		allow = { has_dlc = "Common Sense" }
+		has_parliament = yes
+	}
+}
+
+#earldom_reform = { #T2
+#	icon = "chieftain"
+#	allow_normal_conversion = no
+#	legacy_equivalent = earldom_legacy
+#	valid_for_nation_designer = no
+#	fixed_rank = 1
+#	potential = {
+#		culture_group = british
+#		religion_group = christian
+#		capital_scope = { region = british_isles_region }
+#		NOT = { has_reform = tanistry_reform }
+#		NOT = { religion = orthodox }
+#		NOT = { government_rank = 2 }
+#	}
+#	modifiers = {
+#		stability_cost_modifier = -0.1
+#		global_manpower_modifier = 0.25
+#		global_institution_spread = -0.05
+#		max_absolutism = -10
+#	}
+#}
 
 #New VU addition by San Felipe
 #Welsh-cultured minors government reform tree.
-welsh_cammote_reform = { #Welsh Chiefdom
-	icon = "chieftain"
-	allow_normal_conversion = no
-	potential = {
-	    NOT = { has_reform = revolutionary_empire_reform }
-		NOT = { religion = orthodox }
-		NOT = { government_rank = 2 }
-		NOT = { has_reform = welsh_principality }
-		NOT = { has_reform = welsh_earldom_reform }
-		religion_group = christian
-		primary_culture = welsh
-		capital_scope = { region = british_isles_region }
-	}
-	lock_level_when_selected = yes
-	legacy_equivalent = welsh_cammote_legacy
-	valid_for_nation_designer = yes
-	nation_designer_cost = -10
-	nation_designer_trigger = { primary_culture = welsh }
-	fixed_rank = 1
-	modifiers = {
-		stability_cost_modifier = -0.1
-		global_manpower_modifier = 0.25
-		global_institution_spread = -0.1
-		max_absolutism = -10
-	}
-}
+#welsh_cammote_reform = { #Welsh Chiefdom
+#	icon = "chieftain"
+#	allow_normal_conversion = no
+#	potential = {
+#	    NOT = { has_reform = revolutionary_empire_reform }
+#		NOT = { religion = orthodox }
+#		NOT = { government_rank = 2 }
+#		NOT = { has_reform = welsh_principality }
+#		NOT = { has_reform = welsh_earldom_reform }
+#		religion_group = christian
+#		primary_culture = welsh
+#		capital_scope = { region = british_isles_region }
+#	}
+#	lock_level_when_selected = yes
+#	legacy_equivalent = welsh_cammote_legacy
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = -10
+#	nation_designer_trigger = { primary_culture = welsh }
+#	fixed_rank = 1
+#	modifiers = {
+#		stability_cost_modifier = -0.1
+#		global_manpower_modifier = 0.25
+#		global_institution_spread = -0.1
+#		max_absolutism = -10
+#	}
+#}
 
-welsh_earldom_reform = { #Welsh Petty Kingdom
-	icon = "chieftain"
-	allow_normal_conversion = no
-	legacy_equivalent = welsh_earldom_legacy
-	valid_for_nation_designer = no
-	fixed_rank = 1
-	potential = {
-		primary_culture = welsh
-		religion_group = christian
-		capital_scope = { region = british_isles_region }
-		NOT = { has_reform = welsh_teyrnas_reform }
-		NOT = { has_reform = welsh_principality }
-		NOT = { religion = orthodox }
-		NOT = { has_reform = revolutionary_empire_reform }
-	}
-	modifiers = {
-		stability_cost_modifier = -0.1
-		global_manpower_modifier = 0.25
-		global_institution_spread = -0.05
-		max_absolutism = -10
-	}
-}
+#welsh_earldom_reform = { #Welsh Petty Kingdom
+#	icon = "chieftain"
+#	allow_normal_conversion = no
+#	legacy_equivalent = welsh_earldom_legacy
+#	valid_for_nation_designer = no
+#	fixed_rank = 1
+#	potential = {
+#		primary_culture = welsh
+#		religion_group = christian
+#		capital_scope = { region = british_isles_region }
+#		NOT = { has_reform = welsh_teyrnas_reform }
+#		NOT = { has_reform = welsh_principality }
+#		NOT = { religion = orthodox }
+#		NOT = { has_reform = revolutionary_empire_reform }
+#	}
+#	modifiers = {
+#		stability_cost_modifier = -0.1
+#		global_manpower_modifier = 0.25
+#		global_institution_spread = -0.05
+#		max_absolutism = -10
+#	}
+#}
 
-welsh_teyrnas_reform = { #tanistry_reform
-	icon = "tanistry"
-	allow_normal_conversion = yes
-	potential = {
-		primary_culture = welsh
-	}
-	nation_designer_trigger = {
-		primary_culture = welsh
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 5
-	modifiers = {
-		morale_damage = 0.05
-		same_culture_advisor_cost = -0.1
-		nobles_loyalty_modifier = 0.05
-	}
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		custom_attributes = {
-			has_ruler_election = yes
-			can_elect_from_relative = yes
-		}
-	}
-	ai = {
-		factor = 1
-	}
-}
+#welsh_teyrnas_reform = { #tanistry_reform
+#	icon = "tanistry"
+#	allow_normal_conversion = yes
+#	potential = {
+#		primary_culture = welsh
+#	}
+#	nation_designer_trigger = {
+#		primary_culture = welsh
+#	}
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 5
+#	modifiers = {
+#		morale_damage = 0.05
+#		same_culture_advisor_cost = -0.1
+#		nobles_loyalty_modifier = 0.05
+#	}
+#	conditional = {
+#		allow = { has_dlc = "Domination" }
+#		custom_attributes = {
+#			has_ruler_election = yes
+#			can_elect_from_relative = yes
+#		}
+#	}
+#	ai = {
+#		factor = 1
+#	}
+#}
 
 #Old English/Hiberno-Norman minors government reform tree.
 norman_lordship_reform = { #T1
@@ -7616,8 +7688,23 @@ crusader_state_vu_reform = {
 			tag = EPI
 			tag = LES
 			tag = NAX
+			tag = THE
+			tag = NRP
+			tag = PLS
 			AND = {
-				technology_group = western
+				OR = {
+				    technology_group = western
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
 				NOT = { government_rank = 3 }
 				capital_scope = {
 					OR = {
@@ -7712,61 +7799,25 @@ scottish_monarchy = {
 	}
 }
 
-greek_marquisiat_reform = {
-	icon = "soldiers_2"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-		    culture_group = byzantine
-		    culture_group = south_slavic
-			AND = { 
-			    has_reform = greek_marquisiat_reform
-			    have_had_reform = greek_marquisiat_reform
-			}
-		}
-	}
-	trigger = {
-		is_part_of_hre = no
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 0
-	nation_designer_trigger = {
-		is_part_of_hre = no
-	}
-	modifiers = {
-		fort_maintenance_modifier = -0.2
-		defensiveness = 0.1
-	}
-	ai = {
-		factor = 1
-	}
-}
-
-greek_catepanates_reform = { #T1
+#VU 1.35 Byzantine minors
+greek_lordship_reform = { #T1
 	icon = "castle"
 	allow_normal_conversion = no
 	potential = {
-	    OR = {
-		    culture_group = byzantine
-		    culture_group = south_slavic
-		}
-		#NOT = { culture_group = gaelic }
+		culture_group = byzantine
+		NOT = { culture_group = south_slavic }
 		capital_scope = { region = balkan_region }
-		NOT = { has_reform = greek_ducates_reform }
+		NOT = { has_reform = greek_duchy_reform }
 	}
 	lock_level_when_selected = yes
-	legacy_equivalent = greek_catepanates_legacy
+	legacy_equivalent = greek_lordship_legacy
 	valid_for_nation_designer = yes
 	nation_designer_cost = 20
 	nation_designer_trigger = {
-	    OR = {
-		    culture_group = byzantine
-		    culture_group = south_slavic
-		}
-		#NOT = { culture_group = gaelic }
+		NOT = { culture_group = south_slavic }
 		capital_scope = { region = balkan_region }
 	}
-	fixed_rank = 1
+	#fixed_rank = 1
 	modifiers = {
 		production_efficiency = 0.15
 		global_tax_modifier = 0.15
@@ -7775,20 +7826,17 @@ greek_catepanates_reform = { #T1
 	}
 }
 
-greek_ducates_reform = { #T2
+greek_duchy_reform = { #T2
 	icon = "castle"
 	allow_normal_conversion = no
-	legacy_equivalent = greek_exarchates_legacy
+	legacy_equivalent = greek_duchy_legacy
 	valid_for_nation_designer = no
-	fixed_rank = 1
+	#fixed_rank = 1
 	potential = {
-		OR = {
-		    culture_group = byzantine
-		    culture_group = south_slavic
-		}
-		#NOT = { culture_group = gaelic }
+	    culture_group = byzantine
+		NOT = { culture_group = south_slavic }
 		capital_scope = { region = balkan_region }
-		#NOT = { has_reform = anglo_irish_monarchy_reform }
+		NOT = { has_reform = greek_roman_governors_reform }
 	}
 	modifiers = {
 		production_efficiency = 0.15
@@ -7797,6 +7845,116 @@ greek_ducates_reform = { #T2
 		max_absolutism = 10
 	}
 }
+
+greek_roman_governors_reform = { #T3
+	icon = "english_monarchy"
+	allow_normal_conversion = no
+	potential = {
+	    culture_group = byzantine
+		capital_scope = { region = balkan_region }
+		has_reform = greek_roman_governors_reform
+	}
+	lock_level_when_selected = yes
+	legacy_equivalent = greek_roman_governors_legacy
+	valid_for_nation_designer = no
+	start_territory_to_estates = 0.3
+	modifiers = {
+		production_efficiency = 0.1
+		global_tax_modifier = 0.1
+		global_autonomy = -0.05
+		max_absolutism = 10
+	}
+	conditional = {
+		allow = { has_dlc = "Common Sense" }
+		has_parliament = yes
+	}
+}
+
+#greek_marquisiat_reform = {
+#	icon = "soldiers_2"
+#	allow_normal_conversion = yes
+#	potential = {
+#		OR = {
+#		    culture_group = byzantine
+#		    culture_group = south_slavic
+#			AND = { 
+#			    has_reform = greek_marquisiat_reform
+#			    have_had_reform = greek_marquisiat_reform
+#			}
+#		}
+#	}
+#	trigger = {
+#		is_part_of_hre = no
+#	}
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 0
+#	nation_designer_trigger = {
+#		is_part_of_hre = no
+#	}
+#	modifiers = {
+#		fort_maintenance_modifier = -0.2
+#		defensiveness = 0.1
+#	}
+#	ai = {
+#		factor = 1
+#	}
+#}
+
+#greek_catepanates_reform = { #T1
+#	icon = "castle"
+#	allow_normal_conversion = no
+#	potential = {
+#	    OR = {
+#		    culture_group = byzantine
+#		    culture_group = south_slavic
+#		}
+#		#NOT = { culture_group = gaelic }
+#		capital_scope = { region = balkan_region }
+#		NOT = { has_reform = greek_ducates_reform }
+#	}
+#	lock_level_when_selected = yes
+#	legacy_equivalent = greek_catepanates_legacy
+#	valid_for_nation_designer = yes
+#	nation_designer_cost = 20
+#	nation_designer_trigger = {
+#	    OR = {
+#		    culture_group = byzantine
+#		    culture_group = south_slavic
+#		}
+#		#NOT = { culture_group = gaelic }
+#		capital_scope = { region = balkan_region }
+#	}
+#	fixed_rank = 1
+#	modifiers = {
+#		production_efficiency = 0.15
+#		global_tax_modifier = 0.15
+#		diplomatic_reputation = -2
+#		max_absolutism = 10
+#	}
+#}
+
+#greek_ducates_reform = { #T2
+#	icon = "castle"
+#	allow_normal_conversion = no
+#	legacy_equivalent = greek_exarchates_legacy
+#	valid_for_nation_designer = no
+#	fixed_rank = 1
+#	potential = {
+#		OR = {
+#		    culture_group = byzantine
+#		    culture_group = south_slavic
+#		}
+#		#NOT = { culture_group = gaelic }
+#		capital_scope = { region = balkan_region }
+#		#NOT = { has_reform = anglo_irish_monarchy_reform }
+#	}
+#	modifiers = {
+#		production_efficiency = 0.15
+#		global_tax_modifier = 0.15
+#		diplomatic_reputation = -1
+#		max_absolutism = 10
+#	}
+#}
 
 #greek_aparchate_reform = {
 #	icon = "greek_aparchate"
@@ -7848,25 +8006,25 @@ greek_ducates_reform = { #T2
 #	}
 #}
 
-greek_exarchates_reform = { #T2
-	icon = "chieftain"
-	allow_normal_conversion = no
-	legacy_equivalent = greek_exarchates_legacy
-	valid_for_nation_designer = no
-	fixed_rank = 1
-	potential = {
-		OR = {
-		    culture_group = byzantine
-		    culture_group = south_slavic
-		}
-		capital_scope = { region = balkan_region }
-		#NOT = { has_reform = tanistry_reform }
-		#NOT = { has_reform = welsh_teyrnas_reform }
-	}
-	modifiers = {
-		stability_cost_modifier = -0.1
-		global_manpower_modifier = 0.25
-		global_institution_spread = -0.05
-		max_absolutism = -10
-	}
-}
+#greek_exarchates_reform = { #T2
+#	icon = "chieftain"
+#	allow_normal_conversion = no
+#	legacy_equivalent = greek_exarchates_legacy
+#	valid_for_nation_designer = no
+#	fixed_rank = 1
+#	potential = {
+#		OR = {
+#		    culture_group = byzantine
+#		    culture_group = south_slavic
+#		}
+#		capital_scope = { region = balkan_region }
+#		#NOT = { has_reform = tanistry_reform }
+#		#NOT = { has_reform = welsh_teyrnas_reform }
+#	}
+#	modifiers = {
+#		stability_cost_modifier = -0.1
+#		global_manpower_modifier = 0.25
+#		global_institution_spread = -0.05
+#		max_absolutism = -10
+#	}
+#}

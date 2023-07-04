@@ -774,14 +774,14 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = fish
                 trade_goods = salt
             }
-			ROOT = { dip_tech = 11 }
+			ROOT = { dip_tech = 28 }
 		}
 		AND = {
             OR = {
                 trade_goods = copper
                 trade_goods = iron
             }
-			ROOT = { mil_tech = 11 }
+			ROOT = { mil_tech = 28 }
 		}
 		AND = {
             OR = {
@@ -790,7 +790,7 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = silk
                 trade_goods = dyes
             }
-			ROOT = { adm_tech = 11 }
+			ROOT = { adm_tech = 28 }
 		}
 		AND = {
             OR = {
@@ -801,7 +801,7 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = tea
                 trade_goods = cocoa
             }
-			ROOT = { adm_tech = 14 }
+			ROOT = { adm_tech = 31 }
 		}
 		AND = {
             OR = {
@@ -812,7 +812,7 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = fur
                 trade_goods = incense
             }
-			ROOT = { dip_tech = 14 }
+			ROOT = { dip_tech = 31 }
 		}
 		AND = {
             OR = {
@@ -824,7 +824,7 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = livestock
                 trade_goods = wine
             }
-			ROOT = { adm_tech = 6 }
+			ROOT = { adm_tech = 23 }
 		}
 		AND = {
             OR = {
@@ -837,11 +837,11 @@ root_can_build_manufactory_here_trigger = {
                 trade_goods = glass
                 trade_goods = chinaware
             }
-			ROOT = { adm_tech = 16 }
+			ROOT = { adm_tech = 33 }
 		}
 		AND = {
             trade_goods = coal
-			ROOT = { adm_tech = 21 }
+			ROOT = { adm_tech = 42 }
 		}
 	}
 }
@@ -1261,7 +1261,7 @@ province_has_current_tech_fort_trigger = {
 		if = {
 			limit = {
 				owner = {
-					NOT = { mil_tech = 14 }
+					NOT = { mil_tech = 31 }
 				}
 			}
 			OR = {
@@ -1275,8 +1275,8 @@ province_has_current_tech_fort_trigger = {
 			limit = {
 				owner = {
 					AND = {
-						mil_tech = 14
-						NOT = { mil_tech = 19 }
+						mil_tech = 31
+						NOT = { mil_tech = 36 }
 					}
 				}
 			}
@@ -1290,8 +1290,8 @@ province_has_current_tech_fort_trigger = {
 			limit = {
 				owner = {
 					AND = {
-						mil_tech = 19
-						NOT = { mil_tech = 24 }
+						mil_tech = 36
+						NOT = { mil_tech = 42 }
 					}
 				}
 			}
@@ -1303,7 +1303,7 @@ province_has_current_tech_fort_trigger = {
 		else_if = {
 			limit = {
 				owner = {
-					mil_tech = 24
+					mil_tech = 42
 				}
 			}
 			has_building = fort_18th
@@ -1316,7 +1316,7 @@ province_has_current_tech_trade_trigger = {
 		if = {
 			limit = {
 				owner = {
-					NOT = { dip_tech = 17 }
+					NOT = { dip_tech = 34 }
 				}
 			}
 			has_building = marketplace
@@ -1325,8 +1325,8 @@ province_has_current_tech_trade_trigger = {
 			limit = {
 				owner = {
 					AND = {
-						dip_tech = 17
-						NOT = { dip_tech = 22 }
+						dip_tech = 34
+						NOT = { dip_tech = 39 }
 					}
 				}
 			}
@@ -1335,7 +1335,7 @@ province_has_current_tech_trade_trigger = {
 		else_if = {
 			limit = {
 				owner = {
-					dip_tech = 22
+					dip_tech = 39
 				}
 			}
 			has_building = stock_exchange
@@ -1343,7 +1343,7 @@ province_has_current_tech_trade_trigger = {
 		else_if = {
 			limit = {
 				owner = {
-					dip_tech = 32
+					dip_tech = 49
 				}
 			}
 			has_building = corporative_headquarters
@@ -2298,7 +2298,19 @@ has_better_tech_than_westerns = {
 		NOT = {
 		    any_country = {
 				tech_difference = 1
-				technology_group = western
+				OR = {
+				    technology_group = western
+				    technology_group = english_tech_group
+				    technology_group = french_tech_group
+				    technology_group = dutch_tech_group
+				    technology_group = german_tech_group
+				    technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+				    technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+				    technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
 				NOT = { tag = ROOT }
 			}
 		}
@@ -2315,7 +2327,19 @@ has_more_institutions_than_westerns = {
 						who = ROOT
 						value = 1
 					}
-					technology_group = western
+					OR = {
+				    technology_group = western
+				    technology_group = english_tech_group
+				    technology_group = french_tech_group
+				    technology_group = dutch_tech_group
+				    technology_group = german_tech_group
+				    technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+				    technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+				    technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
 					NOT = { tag = ROOT }
 				}
 				amount = 1

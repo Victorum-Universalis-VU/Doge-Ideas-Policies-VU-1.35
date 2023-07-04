@@ -2737,7 +2737,7 @@ courthouse = {
             owner = { num_of_loans = 2 }
         }
         modifier = {
-            factor = 0.5				
+            factor = 0.5
             owner = { num_of_loans = 1 }
         }
         
@@ -3027,7 +3027,7 @@ town_hall = {
 		modifier = {
 			factor = 1.5
 			owner = { total_development = 1000 }
-		}				
+		}
 		modifier = {
 			factor = 1.5
 			owner = { total_development = 2000 }
@@ -3106,14 +3106,33 @@ university = {
 			factor = 3			#half of 6, which is what it would require to roughly match a cathedral in priority with no other modifiers
 			FROM = {
 				OR = {
+					technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
 					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
 					technology_group = high_american
 				}
 			}
 		}	#Medium range for eastern, and throwing in High American for fun as this is effectively the default level.
 		modifier = {
 			factor = 4			#Two 3rds of 6, which is what it would require to roughly match a cathedral in priority with no other modifiers
-			FROM = { technology_group = western }
+			FROM = { 
+				OR = {
+					technology_group = western 
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group 
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group 
+				}
+			}
 		}	#The concept of a university may or may not be a uniquely western concept, but in this specific period, it was a western reality, less so elsewhere. Though as a point of interest, universities were a very different beast in this period than the BA most modern people think of.
 		################################################################################
 		###############		Various bonuses and penalties to make things dynamic		###############
@@ -3182,8 +3201,27 @@ university = {
 		modifier = {
 			factor = 0.1
 			FROM = {
-				NOT = { technology_group = western }
-				NOT = { technology_group = eastern }
+				NOT = { 
+					technology_group = western
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group 
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group 
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
+				NOT = {
+					technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
 				NOT = { total_development = 200 }
 			}	#Small non European AI countries shouldn't build many unis, further penalty even beyond the tech group penalty above.
 		}
@@ -4692,7 +4730,21 @@ fort_15th = {
 		#Partly for gameplay, but Europe became insanely fortified during this period
 		modifier = {
 			factor = 1.25
-			FROM = { technology_group = western }			
+			FROM = { 
+				OR = {
+					technology_group = western 
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
+		    }		
 		}
 		
 		#Note Eastern, Ottoman, Muslim, East African, Indian, and Chinese tech groups receive no penalty nor bonus
@@ -4902,7 +4954,21 @@ fort_16th = {
 		#Partly for gameplay, but Europe became insanely fortified during this period
 		modifier = {
 			factor = 1.25
-			FROM = { technology_group = western }			
+			FROM = { 
+				OR = {
+					technology_group = western 
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group 
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
+			}			
 		}
 		
 		#Note Eastern, Ottoman, Muslim, East African, Indian, and Chinese tech groups receive no penalty nor bonus
@@ -5098,7 +5164,21 @@ fort_17th = {
 		#Partly for gameplay, but Europe became insanely fortified during this period
 		modifier = {
 			factor = 1.25
-			FROM = { technology_group = western }			
+			FROM = { 
+				OR = {
+					technology_group = western 
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group 
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
+			}			
 		}
 		
 		#Note Eastern, Ottoman, Muslim, East African, Indian, and Chinese tech groups receive no penalty nor bonus
@@ -5297,7 +5377,21 @@ fort_18th = {
 		#Partly for gameplay, but Europe became insanely fortified during this period
 		modifier = {
 			factor = 1.25
-			FROM = { technology_group = western }			
+			FROM = { 
+				OR = {
+					technology_group = western 
+					technology_group = english_tech_group 
+					technology_group = french_tech_group 
+					technology_group = dutch_tech_group 
+					technology_group = german_tech_group 
+					technology_group = italian_tech_group 
+					technology_group = portuguese_tech_group
+					technology_group = roman_tech_group
+					technology_group = scandinavian_tech_group
+					technology_group = spanish_tech_group
+					technology_group = swiss_tech_group
+				}
+			}			
 		}
 		
 		#Note Eastern, Ottoman, Muslim, East African, Indian, and Chinese tech groups receive no penalty nor bonus
@@ -5492,7 +5586,16 @@ wharf = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 5
@@ -5544,7 +5647,19 @@ wharf = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -5680,7 +5795,16 @@ weapons = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -5724,7 +5848,19 @@ weapons = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -5854,7 +5990,16 @@ textile = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -5898,7 +6043,19 @@ textile = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -6048,7 +6205,16 @@ plantations = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -6092,7 +6258,19 @@ plantations = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -6249,7 +6427,16 @@ tradecompany = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -6293,7 +6480,19 @@ tradecompany = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -6420,6 +6619,7 @@ farm_estate = {
 			trade_goods = potato
 			trade_goods = rice
 			trade_goods = tomato
+			trade_goods = vegetables #Makes sense to have vegetables in a farm doesn't it ?
 			trade_goods = vodka
 			trade_goods = wine
 			trade_goods = whiskey
@@ -6459,7 +6659,16 @@ farm_estate = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -6503,7 +6712,19 @@ farm_estate = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -6637,7 +6858,16 @@ mills = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -6681,7 +6911,19 @@ mills = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -6795,7 +7037,16 @@ furnace = {
 		
 		modifier = {
 			factor = 0.9
-			FROM = { technology_group = eastern }
+			FROM = { 
+				OR = {
+				    technology_group = bohemian_tech_group
+					technology_group = byzantine_tech_group
+					technology_group = eastern
+					technology_group = hungarian_tech_group
+					technology_group = polish_tech_group
+					technology_group = russian_tech_group
+				}
+			}
 		}	#Minor penalty for eastern tech
 		modifier = {
 			factor = 0.6
@@ -6839,7 +7090,19 @@ furnace = {
 			factor = 0.1
 			FROM = {
 				AND = {
-					NOT = { technology_group = western }
+					NOT = { 
+					    technology_group = western
+					    technology_group = english_tech_group 
+					    technology_group = french_tech_group 
+					    technology_group = dutch_tech_group 
+					    technology_group = german_tech_group 
+					    technology_group = italian_tech_group 
+						technology_group = portuguese_tech_group
+					    technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group 
+					    technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+				    }
 					NOT = { total_development = 100 }
 				}
 			}
@@ -7242,6 +7505,7 @@ state_house = {
 	
 	ai_will_do = {
 		factor = 1
+		
 		#ECONOMY 101
 		#AI avoids building with loans
 		modifier = {

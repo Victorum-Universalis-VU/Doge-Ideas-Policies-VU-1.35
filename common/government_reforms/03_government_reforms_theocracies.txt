@@ -658,6 +658,9 @@ dutch_theocracy_reform = {
 					primary_culture = dutch
 					primary_culture = frisian
 					primary_culture = flemish
+					primary_culture = ger_dutch
+				    primary_culture = ger_flemish
+				    primary_culture = ger_frisian
 				}
 				NOT = { map_setup = map_setup_random }
 			}
@@ -1515,14 +1518,50 @@ theocratic_democracy_reform = {
 		factor = 1
 		modifier = {
 			factor = 0.5
-			NOT = { technology_group = western }
+			NOT = { 
+				technology_group = western
+				technology_group = english_tech_group 
+				technology_group = french_tech_group 
+				technology_group = dutch_tech_group 
+				technology_group = german_tech_group 
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group 
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
 		}
 		modifier = {
 			factor = 0.5
-			NOT = { technology_group = western }
+			NOT = { 
+				technology_group = western
+				technology_group = english_tech_group 
+				technology_group = french_tech_group 
+				technology_group = dutch_tech_group 
+				technology_group = german_tech_group 
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group 
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
 			NOT = {
 				any_neighbor_country = {
-					technology_group = western
+					OR = {
+					    technology_group = western
+						technology_group = english_tech_group
+						technology_group = french_tech_group
+						technology_group = dutch_tech_group
+						technology_group = german_tech_group
+						technology_group = italian_tech_group
+						technology_group = portuguese_tech_group
+						technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group
+						technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+					}
 				}
 			}
 		}
@@ -1601,14 +1640,50 @@ regionally_elected_commanders = {
 		factor = 1
 		modifier = {
 			factor = 0.5
-			NOT = { technology_group = western }
+			NOT = { 
+				technology_group = western
+				technology_group = english_tech_group 
+				technology_group = french_tech_group 
+				technology_group = dutch_tech_group 
+				technology_group = german_tech_group 
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group 
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
 		}
 		modifier = {
 			factor = 0.5
-			NOT = { technology_group = western }
+			NOT = { 
+				technology_group = western
+				technology_group = english_tech_group 
+				technology_group = french_tech_group 
+				technology_group = dutch_tech_group 
+				technology_group = german_tech_group 
+				technology_group = italian_tech_group
+				technology_group = portuguese_tech_group
+				technology_group = roman_tech_group
+				technology_group = scandinavian_tech_group 
+				technology_group = spanish_tech_group
+				technology_group = swiss_tech_group
+			}
 			NOT = {
 				any_neighbor_country = {
-					technology_group = western
+					OR = {
+					    technology_group = western
+						technology_group = english_tech_group
+						technology_group = french_tech_group
+						technology_group = dutch_tech_group
+						technology_group = german_tech_group
+						technology_group = italian_tech_group
+						technology_group = portuguese_tech_group
+						technology_group = roman_tech_group
+						technology_group = scandinavian_tech_group
+						technology_group = spanish_tech_group
+						technology_group = swiss_tech_group
+					}
 				}
 			}
 		}

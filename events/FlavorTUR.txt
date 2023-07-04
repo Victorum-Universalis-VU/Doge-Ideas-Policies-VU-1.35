@@ -8380,6 +8380,7 @@ country_event = {
 			government_reform = mansure_army_reform
 		}
 		add_government_reform = mansure_army_reform
+		vu_change_tech_group_to_western = yes
 		change_technology_group = western 
 		change_unit_type = western 
 	}
@@ -8390,6 +8391,7 @@ country_event = {
 		unlock_government_reform = {
 			government_reform = mansure_army_reform
 		}
+		vu_change_tech_group_to_western = yes
 		change_technology_group = western 
 		change_unit_type = western 
 	}
